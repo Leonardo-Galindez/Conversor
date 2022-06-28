@@ -7,7 +7,7 @@ public class Conversor {
         Scanner obj=new Scanner(System.in);
         System.out.println("numero");
         numero=obj.nextInt();
-
+        System.out.println("HOIla");
         while (numero>0){
 
             if(numero%2!=0){
