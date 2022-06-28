@@ -2,12 +2,12 @@ import java.util.Scanner;
 public class Conversor {
     public static void main(String[]args){
     
-        int numero;
-        String binario = "";
+        int numero,pos;
+        String binario ="";
         Scanner obj=new Scanner(System.in);
         System.out.println("numero");
         numero=obj.nextInt();
-        System.out.println("HOIla");
+       
         while (numero>0){
 
             if(numero%2!=0){
@@ -20,7 +20,13 @@ public class Conversor {
             numero=numero/2;
         }
         System.out.println(binario);
+        pos=binario.length();
+        
+        for(int i=0;i<pos;i++){
 
+            
+
+        }
     }
 }
 
