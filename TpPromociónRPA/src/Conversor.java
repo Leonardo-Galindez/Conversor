@@ -10,8 +10,9 @@ public class Conversor {
         Scanner obj=new Scanner(System.in);
         
         System.out.println("Binario a decimal: '1'");
-        System.out.println("Decimal a binario:'0'");
+        System.out.println("Decimal a binario: '0'");
         elect1=obj.next();
+        //switch binario  decimal o decimal a bianario
         switch(elect1){
             case "1": 
             do{
@@ -23,7 +24,7 @@ public class Conversor {
             System.out.println("Complemento a 1: '1'");
             System.out.println("Complemento a 2: '0'");
             elect2=obj.next();
-
+            // switch binario a c1 o binario a c2
             switch(elect2){
                 case "1":
                 c1=ModulesConversor.C1Binario(binario);
@@ -31,7 +32,8 @@ public class Conversor {
                 break;
                 case "2"://en proceso
                 break;
-
+                default:System.out.println("ERROR");
+                break;
             }
             break;
 
