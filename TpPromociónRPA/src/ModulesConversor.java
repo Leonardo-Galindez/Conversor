@@ -1,21 +1,25 @@
 public class ModulesConversor {
     
-    //Modulo para verificar si el numero binario ingresado es correcto
+    //1:Modulo para verificar si el numero binario ingresado es correcto
     public static boolean esBinario(String bin){
         boolean valor;
         int i,cadena;
-        valor=true;
+        valor=false;
+        i=0;
         cadena=bin.length();
-        while(valor=true){
-            for(i=0;i<cadena;i++){
-                if(bin.charAt(i)!='1'||bin.charAt(i)!='0'){
-                    valor=false;
-                }
+
+        while(valor==false && i<cadena){
+            if(bin.charAt(i)!='1' && bin.charAt(i)!='0'){
+               valor=true;
             }
+            i++;
         }
         return valor;
     }
-    //modulo para verificar si un numero decimal es negativo
+
+
+
+    //2:modulo para verificar si un numero decimal es negativo
     public static boolean esNegativo(int num){
         boolean valor;
         valor=false;
@@ -26,7 +30,33 @@ public class ModulesConversor {
 
     }
 
-    //Modulo Decimal a BinarioS
+
+
+    //3:
+
+
+
+    //4: Modulo para sacar el Complemento a 1 de un binario
+    public static String C1Binario(String b){
+        int i,pos;
+        String binario;
+        binario="";
+        pos=b.length();
+        for(i=0;i<pos;i++){
+            if(b.charAt(i)=='1'){
+                binario='0'+binario;
+            }else{
+                if(b.charAt(i)=='0'){
+                    binario='1'+binario;
+                }
+            }
+        }
+        return binario;
+    }
+
+
+
+    //5:Modulo Decimal a Binario
     public static String DecimalBinario(int num){
         String binario;
         binario="";
@@ -43,8 +73,11 @@ public class ModulesConversor {
         }
         return binario;
     }
+
+
+
     //Modulo para saber si el binario representa un numero negativo o no
-    public static String C2binario(String b){
+    /*public static String C2binario(String b){
         int pos;
         pos=b.length();
         for(int i=0;i<pos;i++){
@@ -56,5 +89,5 @@ public class ModulesConversor {
             }
         }   
         return b;
-    }      
+    }   */   
 }
