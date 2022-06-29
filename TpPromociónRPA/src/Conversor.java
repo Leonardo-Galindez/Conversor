@@ -2,31 +2,35 @@ import java.util.Scanner;
 public class Conversor {
     public static void main(String[]args){
     
-        int numero,pos;
-        String binario ="";
+        int numero;
+        String Numbinario,elect;
+
         Scanner obj=new Scanner(System.in);
-        System.out.println("numero");
-        numero=obj.nextInt();
-       
-        while (numero>0){
-
-            if(numero%2!=0){
-                binario =  '1'+binario ;
-                      }else{
-                if(numero%2==0){
-                    binario ='0'+ binario  ;
-                }
-            }
-            numero=numero/2;
-        }
-        System.out.println(binario);
-        pos=binario.length();
         
-        for(int i=0;i<pos;i++){
+        System.out.println("Binario a decimal: '1'");
+        System.out.println("Decimal a bianario:'0'");
+        elect=obj.next();
+        switch(elect){
+            case "1": 
+            System.out.println("Ingrese numero Binario");
+            numero=obj.nextInt();
 
-            
-
-        }
+            break;
+            case "0":
+                System.out.println("Ingrese numero Decimal"); 
+                numero=obj.nextInt();
+                if(numero>=0){
+                    Numbinario=ModulesConversor.DecimalBinario(numero);
+                    System.out.println("Binario:"+Numbinario);
+                }else{
+                    //Modulo decimal complemento a 1 y a 2
+                }
+                
+            break;
+            default:System.out.println("ERROR");
+        }   
+       
+    
     }
 }
 
