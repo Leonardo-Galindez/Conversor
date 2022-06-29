@@ -126,16 +126,19 @@ public class ModulesConversor {
         return binario;
     }
 
+    //8:Modulo Decimal a Binario
+    //9:Modulo Decimal a Binario
+    public static int IngresoBinario(String b){
 
+        int promedio;
+        int cont,acum,decimal;
+        cont=0;
+        acum=0;
 
-    //Modulo para saber si el binario representa un numero negativo o no
-    public static String C2binario(String b){
-        int pos;
-        pos=b.length();
-        if(b.charAt(0)=='1'){
-            b='-'+b;   
-        }
-         
-        return b;
+        decimal=ModulesConversor.BinarioDecimal(b);
+        acum=acum+decimal;
+        
+
+        return acum;
     }    
 }
