@@ -1,3 +1,5 @@
+import javax.lang.model.util.SimpleAnnotationValueVisitor6;
+
 public class ModulesConversor {
     
     //1:Modulo para verificar si el numero binario ingresado es correcto
@@ -44,19 +46,53 @@ public class ModulesConversor {
         pos=b.length();
         for(i=0;i<pos;i++){
             if(b.charAt(i)=='1'){
-                binario='0'+binario;
+                binario=binario+'0';
             }else{
                 if(b.charAt(i)=='0'){
-                    binario='1'+binario;
+                    binario=binario+'1';
                 }
             }
         }
         return binario;
     }
 
+    //5: Modulo para sacar el Complemento a 2 de un binario
+    public static String C2Binario(String b){
+        int pos,i,j;
+        String binarioC2;
+        binarioC2="";
+        boolean valor;
+        valor=false;
+
+        pos=b.length();
+        i=pos-1;
+        while( valor==false && i>=0){
+            if(b.charAt(i)=='1'){
+                valor=true;
+                binarioC2= b.charAt(i)+binarioC2;
+                for(j=i-1;j>=0;j--){
+                    if(b.charAt(j)=='1'){
+                        binarioC2='0'+binarioC2;
+                    }else{
+                        if(b.charAt(j)=='0'){
+                            binarioC2='1'+binarioC2;
+                        }
+                    }
+                }
+            }else{
+                binarioC2= b.charAt(i)+binarioC2;
+            }
+            
+            i--;
+        }
+        return binarioC2;
+    }   
+    //7:Modulo Binario a Decimal
 
 
-    //5:Modulo Decimal a Binario
+
+
+    //7:Modulo Decimal a Binario
     public static String DecimalBinario(int num){
         String binario;
         binario="";
