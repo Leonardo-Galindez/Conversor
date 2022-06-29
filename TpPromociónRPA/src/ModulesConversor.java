@@ -58,6 +58,7 @@ public class ModulesConversor {
 
     //5: Modulo para sacar el Complemento a 2 de un binario
     public static String C2Binario(String b){
+        
         int pos,i,j;
         String binarioC2;
         binarioC2="";
@@ -70,6 +71,7 @@ public class ModulesConversor {
             if(b.charAt(i)=='1'){
                 valor=true;
                 binarioC2= b.charAt(i)+binarioC2;
+
                 for(j=i-1;j>=0;j--){
                     if(b.charAt(j)=='1'){
                         binarioC2='0'+binarioC2;
