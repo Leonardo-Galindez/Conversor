@@ -58,7 +58,7 @@ public class ModulesConversor {
 
     //5: Modulo para sacar el Complemento a 2 de un binario
     public static String C2Binario(String b){
-        
+
         int pos,i,j;
         String binarioC2;
         binarioC2="";
@@ -89,7 +89,24 @@ public class ModulesConversor {
         }
         return binarioC2;
     }   
-    //7:Modulo Binario a Decimal
+    //6:Modulo Binario a Decimal
+    public static int BinarioDecimal(String b){
+        int i,pos,decimal;
+        decimal=0;
+        pos=b.length();
+
+        for(i=pos-1;i>=0;i++){
+            if(b.charAt(i)=='1'){
+                decimal=1*math.pow(2,i);
+
+            }else{
+                decimal=
+            }
+            
+            
+        }
+
+    }
 
 
 
