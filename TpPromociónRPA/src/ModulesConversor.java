@@ -91,25 +91,22 @@ public class ModulesConversor {
     }   
     //6:Modulo Binario a Decimal
     public static int BinarioDecimal(String b){
-        int i,pos,decimal;
+        int i,pos,decimal,j;
         decimal=0;
         pos=b.length();
-
-        for(i=pos-1;i>=0;i++){
+        j=0;
+        for(i=pos-1;i>=0;i--){
             if(b.charAt(i)=='1'){
-                decimal=1*math.pow(2,i);
+                decimal=decimal+1*(int) Math.pow(2, j);
 
             }else{
-                decimal=
+                decimal=decimal+0*(int) Math.pow(2, j);
             }
-            
-            
-        }
+            j++;
+        }   
+        return decimal;
 
     }
-
-
-
 
     //7:Modulo Decimal a Binario
     public static String DecimalBinario(int num){
@@ -132,17 +129,13 @@ public class ModulesConversor {
 
 
     //Modulo para saber si el binario representa un numero negativo o no
-    /*public static String C2binario(String b){
+    public static String C2binario(String b){
         int pos;
         pos=b.length();
-        for(int i=0;i<pos;i++){
-
-            System.out.println("pos:"+i+"  "+b.charAt(i));
-
-            if(b.charAt(0)=='1'){
-                b='-'+b;   
-            }
-        }   
+        if(b.charAt(0)=='1'){
+            b='-'+b;   
+        }
+         
         return b;
-    }   */   
+    }    
 }

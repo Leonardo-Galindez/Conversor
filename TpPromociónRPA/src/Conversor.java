@@ -2,8 +2,8 @@ import java.util.Scanner;
 public class Conversor {
     public static void main(String[]args){
     
-        int numero;
-        String Numbinario,elect1,elect2,binario,c1,c2;
+        int numero,NumDecimal,NumDecimalC2;
+        String Numbinario,elect1,elect2,binario,c1,c2,elect3;
         boolean valor;
         
 
@@ -11,7 +11,7 @@ public class Conversor {
         
         System.out.println("Opciones de binario:'0'");
         System.out.println("Decimal a binario:  '1'");
-        
+
         elect1=obj.next();
         //switch binario  decimal o decimal a bianario
         switch(elect1){
@@ -37,9 +37,19 @@ public class Conversor {
                 case "1":
                     c2=ModulesConversor.C2Binario(binario);
                     System.out.println("Complemento a 2:"+c2);
+                    System.out.println("Desea convertir el Binario en C2 a decimal 'si' ó 'no'");
+                    elect3=obj.next();
+                    switch(elect3){
+                        case "si":
+                            NumDecimal=ModulesConversor.BinarioDecimal(binario);
+                            NumDecimalC2=NumDecimal*-1;
+                            System.out.println("Decimal:"+NumDecimalC2);
+                        break;
+                    }
                 break;
                 case "2":
-                    
+                    NumDecimal=ModulesConversor.BinarioDecimal(binario);
+                    System.out.println("Decimal:"+NumDecimal);
                 break;
 
                 default:
