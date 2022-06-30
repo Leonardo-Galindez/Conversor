@@ -1,4 +1,6 @@
 import java.util.Scanner;
+
+//Algoritmo para conversion de numeros decimales y bionarios
 public class Conversor {
     public static void main(String[]args){
         int acumDecimal,numero,NumDecimal,acum,cont,posicion2,posicion1;
@@ -23,9 +25,7 @@ public class Conversor {
             System.out.println("Binario en Signo Magnitud a Decimal--'7'");
             System.out.println("Terminar-----------------------------'8'");
             elect1=obj.next();
-
             switch(elect1){
-
                 case "1":
                 System.out.println("Ingrese numero Decimal"); 
                 numero=obj.nextInt();
@@ -34,9 +34,9 @@ public class Conversor {
                     System.out.println("Binario:"+Numbinario);
                 }else{
                     //Si ingresa un numero negativo
+                    //consultar
                 }
                 break;
-
                 case "2": 
                 do{
                     System.out.println("Ingrese Numero Binario");

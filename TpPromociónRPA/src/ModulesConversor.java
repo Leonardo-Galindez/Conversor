@@ -1,6 +1,5 @@
 
 public class ModulesConversor {
-    
     //1:Modulo para verificar si el numero binario ingresado es correcto
     public static boolean esBinario(String bin){
         boolean valor;
