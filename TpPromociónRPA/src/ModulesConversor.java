@@ -1,4 +1,3 @@
-import javax.lang.model.util.SimpleAnnotationValueVisitor6;
 
 public class ModulesConversor {
     
@@ -34,7 +33,18 @@ public class ModulesConversor {
 
 
 
-    //3:
+    //3:Modulo sub cadena
+    public static String Subcadena(String b, int pos1, int pos2){
+        int i,posMain;
+        String bin;
+        bin="";
+        posMain=b.length();
+        for(i=pos1;i<=pos2;i++){
+            bin=bin+b.charAt(i);
+        }
+        return bin;
+    }
+
 
 
 
@@ -89,7 +99,37 @@ public class ModulesConversor {
         }
         return binarioC2;
     }   
-    //6:Modulo Binario a Decimal
+
+    //7:modulo binario en signo magnitud a decimal
+    public static int SignoMagDecimal(String b){
+        String bin;
+        boolean valor;
+        int i,j,decimal;
+        i=0;
+        valor=false;
+        bin="";
+        
+        if(b.charAt(0)=='1'){
+            i=1;
+            for(j=i;j<b.length();j++){
+                bin=bin+b.charAt(j);
+                
+            }
+            decimal=ModulesConversor.BinarioDecimal(bin);
+            decimal=decimal*-1;
+        }else{
+            for(j=i;j<b.length();j++){
+                bin=bin+b.charAt(j);
+            }
+            decimal=ModulesConversor.BinarioDecimal(bin);
+        }
+    
+        return decimal;
+      
+    }
+
+
+    //7:Modulo Binario a Decimal
     public static int BinarioDecimal(String b){
         int i,pos,decimal,j;
         decimal=0;
@@ -108,7 +148,7 @@ public class ModulesConversor {
 
     }
 
-    //7:Modulo Decimal a Binario
+    //8:Modulo Decimal a Binario
     public static String DecimalBinario(int num){
         String binario;
         binario="";
@@ -126,8 +166,9 @@ public class ModulesConversor {
         return binario;
     }
 
-    //8:Modulo Decimal a Binario
-    //9:Modulo Decimal a Binario
+    
+
+    //9:Modulo acumuldor de binarios
     public static int IngresoBinario(String b){
 
         int promedio;
