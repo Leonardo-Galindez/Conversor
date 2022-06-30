@@ -51,6 +51,7 @@ public class ModulesConversor {
         }
         return binario;
     }
+    //Consultar si estaria bien
     //5: Modulo para sacar el Complemento a 2 de un binario
     public static String C2Binario(String b){
         int pos,i,j;
@@ -135,6 +136,7 @@ public class ModulesConversor {
         }
         return binario;
     }
+    //En proceso
     //9:Modulo acumuldor de binarios
     public static int IngresoBinario(String b){
         int promedio;

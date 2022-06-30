@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 //Algoritmo para conversion de numeros decimales y bionarios
 public class Conversor {
     public static void main(String[]args){
@@ -19,7 +18,7 @@ public class Conversor {
             System.out.println("Decimal a binario:-------------------'1'");
             System.out.println("Binario a Decimal:-------------------'2'");
             System.out.println("Seleccione Subcadena:----------------'3'");
-            System.out.println("Promedio numeros Binarios:-----------'4'");
+            System.out.println("Promedio numeros Binarios:-----------'4'");//En proceso
             System.out.println("Binario a Complemento a 1:-----------'5'");
             System.out.println("Binario a Complemento a 2:-----------'6'");
             System.out.println("Binario en Signo Magnitud a Decimal--'7'");
@@ -58,6 +57,8 @@ public class Conversor {
                     Subcadena=ModulesConversor.Subcadena(binario,posicion1, posicion2);
                     System.out.println("Binario de la posicion:"+posicion1+"   hasta la posicion:"+posicion2+":"+Subcadena);
                 break;
+
+                //En proceso
                 case "4": 
                     while(valorBinario==false){
                         System.out.println("Ingrese binario");
