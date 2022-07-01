@@ -1,5 +1,6 @@
-
+import java.util.Scanner;
 public class ModulesConversor {
+   
     //1:Modulo para verificar si el numero binario ingresado es correcto
     public static boolean esBinario(String bin){
         boolean valor;
@@ -16,14 +17,7 @@ public class ModulesConversor {
         return valor;
     }
     //2:modulo para verificar si un numero decimal es negativo
-    public static boolean esNegativo(int num){
-        boolean valor;
-        valor=false;
-        if(num>0){
-            valor=true;
-        }
-        return valor;
-    }
+    
     //3:Modulo sub cadena
     public static String Subcadena(String b, int pos1, int pos2){
         int i;
@@ -122,6 +116,9 @@ public class ModulesConversor {
     public static String DecimalBinario(int num){
         String binario;
         binario="";
+        if(num<0){
+            num=num*-1;
+        }
         while (num>0){
             if(num%2!=0){
                 binario =  '1'+binario ;
@@ -134,20 +131,40 @@ public class ModulesConversor {
         }
         return binario;
     }
-
-    public static String base2PorBinario(){
-        
+    //Modulo que retorna el binario ingresado con n ceros a la izquierda
+    public static String base2PorBinario(String b,int n){
+        int i;
+        for(i=0;i<n;i++){
+            b=b+'0';
+        }
+        return b;
     }
-
-    //En proceso
     //9:Modulo acumuldor de binarios
-    public static int IngresoBinario(String b){
-        int promedio;
-        int cont,acum,decimal;
+    //Consultar si se puede hacer asi
+    public static void IngresoBinario(){
+        boolean valor;
+        int acumDecimal,acum,cont,promedio;
         cont=0;
+        acumDecimal=0;
         acum=0;
-        decimal=ModulesConversor.BinarioDecimal(b);
-        acum=acum+decimal;
-        return acum;
+        String b;
+        valor=false;
+        Scanner obj=new Scanner(System.in);
+        while(valor==false){
+            do{
+            System.out.println("Ingrese Numero Binario");
+            b=obj.next();
+            valor=ModulesConversor.esBinario(b);
+            }while(valor==true);
+            acumDecimal=ModulesConversor.BinarioDecimal(b);
+            acum=acum+acumDecimal;
+            cont++;
+            if(acumDecimal==0){
+                valor=true;
+                cont--;
+            }
+        }
+        promedio=acum/cont;
+        System.out.println("El promedio de numeros binarios ingresados en decimal es de:"+promedio);
     }    
 }
