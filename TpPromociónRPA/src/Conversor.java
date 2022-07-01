@@ -2,13 +2,16 @@ import java.util.Scanner;
 //Algoritmo para conversion de numeros decimales y bionarios(Complemento a 2,Complemento a 1)
 public class Conversor {
     public static void main(String[]args){
-        int numero,NumDecimal,posicion1,posicion2,expo,Promedio;
+        int num,NumDecimal,posicion1,posicion2,expo;
+        float PromedioDecimal;
         String Subcadena,Numbinario,elect1,binario,c1,c2,BinExpo;
         boolean valor;
         valor=false;
         Scanner obj=new Scanner(System.in);
-        //menú de navegación
+        //menú de navegación4
         do {
+            System.out.println("Por favor ingrese una de las siguintes opciones");
+            System.out.println("");
             System.out.println("Decimal a binario:-----------------------'1'");
             System.out.println("Binario a Decimal:-----------------------'2'");
             System.out.println("Seleccione Subcadena:--------------------'3'");
@@ -22,8 +25,8 @@ public class Conversor {
             switch(elect1){
                 case "1":
                     System.out.println("Ingrese numero Decimal"); 
-                    numero=obj.nextInt();
-                    Numbinario=ModulesConversor.DecimalBinario(numero);
+                    num=obj.nextInt();
+                    Numbinario=ModulesConversor.DecimalBinario(num);
                     System.out.println("Binario:"+Numbinario);
                 break;
                 case "2": 
@@ -49,8 +52,8 @@ public class Conversor {
                     System.out.println("Binario de la posicion:"+posicion1+" hasta la posicion:"+posicion2+"es :"+Subcadena);
                 break;
                 case "4": 
-                    Promedio=ModulesConversor.IngresoBinario();
-                    System.out.println("El promedio de numeros binarios ingresados en decimal es de:"+Promedio);
+                    PromedioDecimal=ModulesConversor.IngresoBinario();
+                    System.out.println("El promedio de numeros binarios ingresados en decimal es de:"+PromedioDecimal);
                 break;
                 case "5":
                     do{

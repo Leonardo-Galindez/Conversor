@@ -16,6 +16,8 @@ public class ModulesConversor {
         }
         return valor;
     }
+
+
     //2:modulo para verificar si un numero  es negativo
     
     //3:Modulo sub cadena
@@ -143,11 +145,11 @@ public class ModulesConversor {
         return b;
     }
     //9:Modulo acumuldor de binarios
-    public static int IngresoBinario(){
+    public static float IngresoBinario(){
         boolean valor;
-        int acumDecimal,acum,cont,promedio;
+        int Decimal,cont;
+        float promedio,acum;
         cont=0;
-        acumDecimal=0;
         acum=0;
         String b;
         valor=false;
@@ -158,17 +160,18 @@ public class ModulesConversor {
             b=obj.next();
             valor=ModulesConversor.esBinario(b);
             }while(valor==true);
-            acumDecimal=ModulesConversor.BinarioDecimal(b);
-            acum=acum+acumDecimal;
+            Decimal=ModulesConversor.BinarioDecimal(b);
+            acum=acum+Decimal;
             cont++;
-            if(acumDecimal==0){
+            if(Decimal==0){
                 valor=true;
                 cont--;
             }
         }
         promedio=acum/cont;
-        
         return promedio;
     }    
+
+    //Modulo para que el usuario ingrese un binario valido
     
 }
