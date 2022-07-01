@@ -22,17 +22,17 @@ public class Conversor {
             elect1=obj.next();
             switch(elect1){
                 case "1":
-                System.out.println("Ingrese numero Decimal"); 
-                numero=obj.nextInt();
-                if(numero>=0){
-                    Numbinario=ModulesConversor.DecimalBinario(numero);
-                    Numbinario='0'+Numbinario;
+                    System.out.println("Ingrese numero Decimal"); 
+                    numero=obj.nextInt();
+                    if(numero>=0){
+                        Numbinario=ModulesConversor.DecimalBinario(numero);
+                        Numbinario='0'+Numbinario;
+                        System.out.println("Binario:"+Numbinario);
+                    }else{
+                        Numbinario=ModulesConversor.DecimalBinario(numero);
+                        Numbinario='1'+Numbinario;
                     System.out.println("Binario:"+Numbinario);
-                }else{
-                    Numbinario=ModulesConversor.DecimalBinario(numero);
-                    Numbinario='1'+Numbinario;
-                    System.out.println("Binario:"+Numbinario);
-                }
+                    }
                 break;
                 case "2": 
                 do{
@@ -56,6 +56,7 @@ public class Conversor {
                     Subcadena=ModulesConversor.Subcadena(binario,posicion1, posicion2);
                     System.out.println("Binario de la posicion:"+posicion1+"   hasta la posicion:"+posicion2+":"+Subcadena);
                 break;
+               
                 case "4": 
                     ModulesConversor.IngresoBinario();
                 break;
