@@ -73,18 +73,6 @@ public class ModulesConversor {
         binarioC2=binarioC2+binC2;
         return binarioC2;
     }   
-    /* 
-    for(j=i-1;j>=0;j--){
-        if(b.charAt(j)=='1'){
-            binarioC2='0'+binarioC2;
-        }else{
-            if(b.charAt(j)=='0'){
-                binarioC2='1'+binarioC2;
-            }
-        }
-    }*/
-
-
     //7:modulo binario en signo magnitud a decimal
     public static int SignoMagDecimal(String b){
         String bin;

@@ -46,7 +46,7 @@ public class Conversor {
                     System.out.println("Ingrese 2da posicion");
                     posicion2=obj.nextInt();
                     Subcadena=ModulesConversor.Subcadena(binario,posicion1, posicion2);
-                    System.out.println("Binario de la posicion:"+posicion1+"   hasta la posicion:"+posicion2+":"+Subcadena);
+                    System.out.println("Binario de la posicion:"+posicion1+" hasta la posicion:"+posicion2+"es :"+Subcadena);
                 break;
                 case "4": 
                     Promedio=ModulesConversor.IngresoBinario();
