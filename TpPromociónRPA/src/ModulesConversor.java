@@ -141,7 +141,7 @@ public class ModulesConversor {
     }
     //9:Modulo acumuldor de binarios
     //Consultar si se puede hacer asi
-    public static void IngresoBinario(){
+    public static int IngresoBinario(){
         boolean valor;
         int acumDecimal,acum,cont,promedio;
         cont=0;
@@ -165,6 +165,8 @@ public class ModulesConversor {
             }
         }
         promedio=acum/cont;
-        System.out.println("El promedio de numeros binarios ingresados en decimal es de:"+promedio);
+        
+        return promedio;
     }    
+    
 }

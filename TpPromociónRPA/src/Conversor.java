@@ -2,7 +2,7 @@ import java.util.Scanner;
 //Algoritmo para conversion de numeros decimales y bionarios
 public class Conversor {
     public static void main(String[]args){
-        int numero,NumDecimal,posicion2,posicion1,expo;
+        int numero,NumDecimal,posicion2,posicion1,expo,Promedio;
         String Subcadena,Numbinario,elect1,binario,c1,c2,BinExpo;
         boolean valor;
 
@@ -58,7 +58,10 @@ public class Conversor {
                 break;
                
                 case "4": 
-                    ModulesConversor.IngresoBinario();
+                    
+                    Promedio=ModulesConversor.IngresoBinario();
+                    System.out.println("El promedio de numeros binarios ingresados en decimal es de:"+Promedio);
+                    
                 break;
                 case "5":
                     do{
