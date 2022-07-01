@@ -24,15 +24,10 @@ public class Conversor {
                 case "1":
                     System.out.println("Ingrese numero Decimal"); 
                     numero=obj.nextInt();
-                    if(numero>=0){
-                        Numbinario=ModulesConversor.DecimalBinario(numero);
-                        Numbinario='0'+Numbinario;
-                        System.out.println("Binario:"+Numbinario);
-                    }else{
-                        Numbinario=ModulesConversor.DecimalBinario(numero);
-                        Numbinario='1'+Numbinario;
+                    Numbinario=ModulesConversor.DecimalBinario(numero);
                     System.out.println("Binario:"+Numbinario);
-                    }
+                    Numbinario=ModulesConversor.DecimalBinario(numero);
+                    System.out.println("Binario:"+Numbinario);
                 break;
                 case "2": 
                 do{
@@ -56,12 +51,9 @@ public class Conversor {
                     Subcadena=ModulesConversor.Subcadena(binario,posicion1, posicion2);
                     System.out.println("Binario de la posicion:"+posicion1+"   hasta la posicion:"+posicion2+":"+Subcadena);
                 break;
-               
                 case "4": 
-                    
                     Promedio=ModulesConversor.IngresoBinario();
                     System.out.println("El promedio de numeros binarios ingresados en decimal es de:"+Promedio);
-                    
                 break;
                 case "5":
                     do{

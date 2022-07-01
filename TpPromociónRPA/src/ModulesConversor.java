@@ -16,7 +16,7 @@ public class ModulesConversor {
         }
         return valor;
     }
-    //2:modulo para verificar si un numero decimal es negativo
+    //2:modulo para verificar si un numero  es negativo
     
     //3:Modulo sub cadena
     public static String Subcadena(String b, int pos1, int pos2){
@@ -115,20 +115,28 @@ public class ModulesConversor {
     //8:Modulo Decimal a Binario
     public static String DecimalBinario(int num){
         String binario;
+        char signo;
         binario="";
+        if(num>0){
+            signo='0';
+        }else{
+            signo='1';
+        }
         if(num<0){
             num=num*-1;
         }
         while (num>0){
             if(num%2!=0){
-                binario =  '1'+binario ;
+                binario ='1'+binario ;
                       }else{
                 if(num%2==0){
-                    binario ='0'+ binario  ;
+                    binario ='0'+ binario;
                 }
             }
             num=num/2;
         }
+        binario=signo+binario;
+
         return binario;
     }
     //Modulo que retorna el binario ingresado con n ceros a la izquierda
