@@ -45,36 +45,46 @@ public class ModulesConversor {
         }
         return binario;
     }
-    //Consultar si estaria bien
     //5: Modulo para sacar el Complemento a 2 de un binario
     public static String C2Binario(String b){
-        int pos,i,j;
-        String binarioC2;
+        int posMain,posSub,i;
+        String binC2,binarioC2;
+        binC2="";
         binarioC2="";
         boolean valor;
         valor=false;
-        pos=b.length();
-        i=pos-1;
+        posMain=b.length();
+        i=posMain-1;
         while( valor==false && i>=0){
             if(b.charAt(i)=='1'){
                 valor=true;
-                binarioC2= b.charAt(i)+binarioC2;
-                for(j=i-1;j>=0;j--){
-                    if(b.charAt(j)=='1'){
-                        binarioC2='0'+binarioC2;
-                    }else{
-                        if(b.charAt(j)=='0'){
-                            binarioC2='1'+binarioC2;
-                        }
-                    }
-                }
+                binC2= b.charAt(i)+binC2; 
             }else{
-                binarioC2= b.charAt(i)+binarioC2;
+                binC2= b.charAt(i)+binC2;
             }
             i--;
         }
+        posSub=binC2.length();
+        posMain=posMain-posSub;
+        for(i=posMain;i>0;i--){
+            binarioC2=binarioC2+b.charAt(i);
+        }
+        binarioC2=ModulesConversor.C1Binario(binarioC2);
+        binarioC2=binarioC2+binC2;
         return binarioC2;
     }   
+    /* 
+    for(j=i-1;j>=0;j--){
+        if(b.charAt(j)=='1'){
+            binarioC2='0'+binarioC2;
+        }else{
+            if(b.charAt(j)=='0'){
+                binarioC2='1'+binarioC2;
+            }
+        }
+    }*/
+
+
     //7:modulo binario en signo magnitud a decimal
     public static int SignoMagDecimal(String b){
         String bin;
@@ -121,8 +131,6 @@ public class ModulesConversor {
             signo='0';
         }else{
             signo='1';
-        }
-        if(num<0){
             num=num*-1;
         }
         while (num>0){
@@ -136,7 +144,6 @@ public class ModulesConversor {
             num=num/2;
         }
         binario=signo+binario;
-
         return binario;
     }
     //Modulo que retorna el binario ingresado con n ceros a la izquierda
@@ -148,7 +155,6 @@ public class ModulesConversor {
         return b;
     }
     //9:Modulo acumuldor de binarios
-    //Consultar si se puede hacer asi
     public static int IngresoBinario(){
         boolean valor;
         int acumDecimal,acum,cont,promedio;

@@ -1,11 +1,10 @@
 import java.util.Scanner;
-//Algoritmo para conversion de numeros decimales y bionarios
+//Algoritmo para conversion de numeros decimales y bionarios(Complemento a 2,Complemento a 1)
 public class Conversor {
     public static void main(String[]args){
-        int numero,NumDecimal,posicion2,posicion1,expo,Promedio;
+        int numero,NumDecimal,posicion1,posicion2,expo,Promedio;
         String Subcadena,Numbinario,elect1,binario,c1,c2,BinExpo;
         boolean valor;
-
         valor=false;
         Scanner obj=new Scanner(System.in);
         //menú de navegación
@@ -26,15 +25,13 @@ public class Conversor {
                     numero=obj.nextInt();
                     Numbinario=ModulesConversor.DecimalBinario(numero);
                     System.out.println("Binario:"+Numbinario);
-                    Numbinario=ModulesConversor.DecimalBinario(numero);
-                    System.out.println("Binario:"+Numbinario);
                 break;
                 case "2": 
-                do{
-                    System.out.println("Ingrese Numero Binario");
-                    binario=obj.next();
-                    valor=ModulesConversor.esBinario(binario);
-                }while(valor==true);
+                    do{
+                        System.out.println("Ingrese Numero Binario");
+                        binario=obj.next();
+                        valor=ModulesConversor.esBinario(binario);
+                    }while(valor==true);
                     NumDecimal=ModulesConversor.BinarioDecimal(binario);
                     System.out.println("Decimal:"+NumDecimal);
                 break;
