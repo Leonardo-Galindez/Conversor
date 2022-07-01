@@ -15,14 +15,15 @@ public class Conversor {
         Scanner obj=new Scanner(System.in);
         //menú de navegación
         do {
-            System.out.println("Decimal a binario:-------------------'1'");
-            System.out.println("Binario a Decimal:-------------------'2'");
-            System.out.println("Seleccione Subcadena:----------------'3'");
-            System.out.println("Promedio numeros Binarios:-----------'4'");//En proceso
-            System.out.println("Binario a Complemento a 1:-----------'5'");
-            System.out.println("Binario a Complemento a 2:-----------'6'");
-            System.out.println("Binario en Signo Magnitud a Decimal--'7'");
-            System.out.println("Terminar-----------------------------'8'");
+            System.out.println("Decimal a binario:-----------------------'1'");
+            System.out.println("Binario a Decimal:-----------------------'2'");
+            System.out.println("Seleccione Subcadena:--------------------'3'");
+            System.out.println("Promedio numeros Binarios:---------------'4'");//En proceso
+            System.out.println("Binario a Complemento a 1:---------------'5'");
+            System.out.println("Binario a Complemento a 2:---------------'6'");
+            System.out.println("Binario en Signo Magnitud a Decimal------'7'");
+            System.out.println("Multiplicar por 2 a la n por un binario--'8'");
+            System.out.println("Terminar---------------------------------'9'");
             elect1=obj.next();
             switch(elect1){
                 case "1":
@@ -48,8 +49,11 @@ public class Conversor {
 
                 break;
                 case "3": 
-                    System.out.println("Ingrese binario");
-                    binario=obj.next();
+                    do{
+                        System.out.println("Ingrese Numero Binario");
+                        binario=obj.next();
+                        valor=ModulesConversor.esBinario(binario);
+                    }while(valor==true);
                     System.out.println("Ingrese 1ra posicion");
                     posicion1=obj.nextInt();
                     System.out.println("Ingrese 2da posicion");
@@ -61,8 +65,11 @@ public class Conversor {
                 //En proceso
                 case "4": 
                     while(valorBinario==false){
-                        System.out.println("Ingrese binario");
-                        binario=obj.next();
+                        do{
+                            System.out.println("Ingrese Numero Binario");
+                            binario=obj.next();
+                            valor=ModulesConversor.esBinario(binario);
+                        }while(valor==true);
                         if(binario.equals("0")){
                             valorBinario=true;
                         }
@@ -74,20 +81,29 @@ public class Conversor {
                     System.out.println(promedio);
                 break;
                 case "5":
-                    System.out.println("Ingrese Numero Binario");
-                    binario=obj.next();
+                    do{
+                        System.out.println("Ingrese Numero Binario");
+                        binario=obj.next();
+                        valor=ModulesConversor.esBinario(binario);
+                    }while(valor==true);
                     c1=ModulesConversor.C1Binario(binario);
                     System.out.println("Complemento a 1:"+c1);
                 break;
                 case "6":
-                    System.out.println("Ingrese Numero Binario");
-                    binario=obj.next();
+                    do{
+                        System.out.println("Ingrese Numero Binario");
+                        binario=obj.next();
+                        valor=ModulesConversor.esBinario(binario);
+                    }while(valor==true);
                     c2=ModulesConversor.C2Binario(binario);
                     System.out.println("Complemento a 2:"+c2);
                 break;
                 case "7": 
-                    System.out.println("Ingrese Numero Binario");
-                    binario=obj.next();
+                    do{
+                        System.out.println("Ingrese Numero Binario");
+                        binario=obj.next();
+                        valor=ModulesConversor.esBinario(binario);
+                    }while(valor==true);
                     NumDecimal=ModulesConversor.SignoMagDecimal(binario);
                     System.out.println("Decimal:"+NumDecimal);
                 break;
@@ -97,7 +113,8 @@ public class Conversor {
                 default:
                     System.out.println("ERROR");
                 break;
-            }  
+            } 
+            System.out.println(""); 
         }while(valor==false);
     }
 }

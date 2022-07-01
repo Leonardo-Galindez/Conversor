@@ -84,10 +84,8 @@ public class ModulesConversor {
     //7:modulo binario en signo magnitud a decimal
     public static int SignoMagDecimal(String b){
         String bin;
-        boolean valor;
         int i,j,decimal;
         i=0;
-        valor=false;
         bin="";
         if(b.charAt(0)=='1'){
             i=1;
@@ -136,6 +134,11 @@ public class ModulesConversor {
         }
         return binario;
     }
+
+    public static String base2PorBinario(){
+        
+    }
+
     //En proceso
     //9:Modulo acumuldor de binarios
     public static int IngresoBinario(String b){
