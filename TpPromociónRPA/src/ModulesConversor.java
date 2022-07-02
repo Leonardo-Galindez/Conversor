@@ -27,12 +27,17 @@ public class ModulesConversor {
     }    
     //3:Modulo sub cadena
     public static String Subcadena(String b, int pos1, int pos2){
-        int i;
+        int i,cant;
         String bin;
         bin="";
-        for(i=pos1;i<=pos2;i++){
-            bin=bin+b.charAt(i);
-        }
+        cant=b.length();
+            if(pos1>=0 && pos1<cant && pos2>=0 && pos2<cant){
+                for(i=pos1;i<=pos2;i++){
+                    bin=bin+b.charAt(i);
+                }
+            }else{
+                bin="ERROR";
+            }
         return bin;
     }
     //4: Modulo para sacar el Complemento a 1 de un binario
@@ -62,7 +67,7 @@ public class ModulesConversor {
         valor=false;
         posMain=b.length();
         i=posMain-1;
-        while( valor==false && i>=0){
+        while( valor==false && i>=0){//verifica de derecha a izquierda por recorrido parcial hasta encontrar el primer 1
             if(b.charAt(i)=='1'){
                 valor=true;
                 binC2= b.charAt(i)+binC2; 
@@ -71,13 +76,14 @@ public class ModulesConversor {
             }
             i--;
         }
+        //bincC2 tiene la parte de la cadena ingresada hasta incuisive el primer 1 
         posSub=binC2.length();
-        posMain=posMain-posSub;
-        for(i=posMain;i>0;i--){
+        posMain=posMain-posSub;//le restamos a posMain para ibtener la cantidad de caracteres que tenemos en la cadena despues del primer 1
+        for(i=posMain;i>0;i--){//For para ir concatenando los caracteres de la cadena a partir de la posicion del primer 1
             binarioC2=binarioC2+b.charAt(i);
         }
-        binarioC2=ModulesConversor.C1Binario(binarioC2);//llamamos al modulo c1 para invertir los valores a partir de la posicion del primer uno
-        binarioC2=binarioC2+binC2;
+        binarioC2=ModulesConversor.C1Binario(binarioC2);//llamamos al modulo c1 para invertir los valores a partir de la posicion del primer 1
+        binarioC2=binarioC2+binC2;//Concatenamos la cadena despues del primer 1 y la cadena antes del primer 1 inclusive
         return binarioC2;
     }   
     //7:modulo binario en signo magnitud a decimal
@@ -152,6 +158,7 @@ public class ModulesConversor {
         return b;
     }
     //9:Modulo acumuldor de binarios
+    //probar acumular numero y no numeros
     public static float IngresoBinario(){
         boolean valor;
         int Decimal,cont;
