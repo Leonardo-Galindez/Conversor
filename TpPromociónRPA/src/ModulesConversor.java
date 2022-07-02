@@ -16,10 +16,15 @@ public class ModulesConversor {
         }
         return valor;
     }
-
-
     //2:modulo para verificar si un numero  es negativo
-    
+    public static boolean BinarioNegativo(String b){
+        boolean valor;
+        valor=false;
+        if(b.charAt(0)=='0'){
+            valor=true;
+        }
+        return valor;
+    }    
     //3:Modulo sub cadena
     public static String Subcadena(String b, int pos1, int pos2){
         int i;
@@ -79,20 +84,22 @@ public class ModulesConversor {
     public static int SignoMagDecimal(String b){
         String bin;
         int i,j,decimal;
+        boolean valor;
         i=0;
         bin="";
-        if(b.charAt(0)=='1'){
+        valor=ModulesConversor.BinarioNegativo(b);
+        if(valor){
+            for(j=i;j<b.length();j++){
+                bin=bin+b.charAt(j);
+            }
+            decimal=ModulesConversor.BinarioDecimal(bin);
+        }else{
             i=1;
             for(j=i;j<b.length();j++){
                 bin=bin+b.charAt(j);   
             }
             decimal=ModulesConversor.BinarioDecimal(bin);
-            decimal=decimal*-1;
-        }else{
-            for(j=i;j<b.length();j++){
-                bin=bin+b.charAt(j);
-            }
-            decimal=ModulesConversor.BinarioDecimal(bin);
+            decimal=decimal*-1;  
         }
         return decimal;
     }
@@ -170,8 +177,5 @@ public class ModulesConversor {
         }
         promedio=acum/cont;
         return promedio;
-    }    
-
-    //Modulo para que el usuario ingrese un binario valido
-    
+    }       
 }

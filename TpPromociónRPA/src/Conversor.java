@@ -10,17 +10,18 @@ public class Conversor {
         Scanner obj=new Scanner(System.in);
         //menú de navegación4
         do {
-            System.out.println("Por favor ingrese una de las siguintes opciones");
+            System.out.println("Seleccione una de las opciones-----------------------'*'");
             System.out.println("");
-            System.out.println("Decimal a binario:-----------------------'1'");
-            System.out.println("Binario a Decimal:-----------------------'2'");
-            System.out.println("Seleccione Subcadena:--------------------'3'");
-            System.out.println("Promedio numeros Binarios:---------------'4'");
-            System.out.println("Binario a Complemento a 1:---------------'5'");
-            System.out.println("Binario a Complemento a 2:---------------'6'");
-            System.out.println("Binario en Signo Magnitud a Decimal------'7'");
-            System.out.println("Multiplicar por 2 a la n por un binario--'8'");
-            System.out.println("Terminar---------------------------------'9'");
+            System.out.println("Decimal a binario:-----------------------------------'1'");
+            System.out.println("Binario a Decimal:-----------------------------------'2'");
+            System.out.println("Seleccione Subcadena:--------------------------------'3'");
+            System.out.println("Promedio numeros Binarios:---------------------------'4'");
+            System.out.println("Binario a Complemento a 1:---------------------------'5'");
+            System.out.println("Binario a Complemento a 2:---------------------------'6'");
+            System.out.println("Binario en Signo Magnitud a Decimal------------------'7'");
+            System.out.println("Multiplicar por 2 a la n por un binario--------------'8'");
+            System.out.println("El binario representa un numero positivo o negativo--'9'");
+            System.out.println("Terminar---------------------------------------------'0'");
             elect1=obj.next();
             switch(elect1){
                 case "1":
@@ -94,6 +95,19 @@ public class Conversor {
                     System.out.println("El binario:"+BinExpo);
                 break;
                 case "9": 
+                    do{
+                        System.out.println("Ingrese Numero Binario");
+                        binario=obj.next();
+                        valor=ModulesConversor.esBinario(binario);
+                    }while(valor==true);
+                    valor=ModulesConversor.BinarioNegativo(binario);
+                    if(valor){
+                        System.out.println(binario+" :Representa un numero positivo");
+                    }else{
+                        System.out.println(binario+" :Representa un numero negativo");
+                    }
+                break;
+                case "0": 
                     valor=true;
                 break;
                 default:
