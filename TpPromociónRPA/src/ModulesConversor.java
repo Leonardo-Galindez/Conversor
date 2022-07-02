@@ -1,29 +1,29 @@
 import java.util.Scanner;
 public class ModulesConversor {
-   
+    //intertar cambiar valores 
     //1:Modulo para verificar si el numero binario ingresado es correcto
     public static boolean esBinario(String bin){
-        boolean valor;
+        boolean valorBin;
         int i,cadena;
-        valor=false;
+        valorBin=false;
         i=0;
         cadena=bin.length();
-        while(valor==false && i<cadena){
+        while(valorBin==false && i<cadena){
             if(bin.charAt(i)!='1' && bin.charAt(i)!='0'){
-               valor=true;
+                valorBin=true;
             }
             i++;
         }
-        return valor;
+        return valorBin;
     }
     //2:modulo para verificar si un numero  es negativo
-    public static boolean BinarioNegativo(String b){
-        boolean valor;
-        valor=false;
+    public static boolean esNegativo(String b){
+        boolean valorNeg;
+        valorNeg=false;
         if(b.charAt(0)=='0'){
-            valor=true;
+            valorNeg=true;
         }
-        return valor;
+        return valorNeg;
     }    
     //3:Modulo sub cadena
     public static String Subcadena(String b, int pos1, int pos2){
@@ -41,24 +41,24 @@ public class ModulesConversor {
         return bin;
     }
     //4: Modulo para sacar el Complemento a 1 de un binario
-    public static String C1Binario(String b){
+    public static String enComplementoA1(String b){
         int i,pos;
-        String binario;
-        binario="";
+        String binarioA1;
+        binarioA1="";
         pos=b.length();
         for(i=0;i<pos;i++){
             if(b.charAt(i)=='1'){
-                binario=binario+'0';
+                binarioA1=binarioA1+'0';
             }else{
                 if(b.charAt(i)=='0'){
-                    binario=binario+'1';
+                    binarioA1=binarioA1+'1';
                 }
             }
         }
-        return binario;
+        return binarioA1;
     }
     //5: Modulo para sacar el Complemento a 2 de un binario
-    public static String C2Binario(String b){
+    public static String enComplementoA2(String b){
         int posMain,posSub,i;
         String binC2,binarioC2;
         binC2="";
@@ -82,7 +82,7 @@ public class ModulesConversor {
         for(i=posMain;i>0;i--){//For para ir concatenando los caracteres de la cadena a partir de la posicion del primer 1
             binarioC2=binarioC2+b.charAt(i);
         }
-        binarioC2=ModulesConversor.C1Binario(binarioC2);//llamamos al modulo c1 para invertir los valores a partir de la posicion del primer 1
+        binarioC2=ModulesConversor.enComplementoA1(binarioC2);//llamamos al modulo c1 para invertir los valores a partir de la posicion del primer 1
         binarioC2=binarioC2+binC2;//Concatenamos la cadena despues del primer 1 y la cadena antes del primer 1 inclusive
         return binarioC2;
     }   
@@ -90,27 +90,27 @@ public class ModulesConversor {
     public static int SignoMagDecimal(String b){
         String bin;
         int i,j,decimal;
-        boolean valor;
+        boolean valorDec;
         i=0;
         bin="";
-        valor=ModulesConversor.BinarioNegativo(b);
-        if(valor){
+        valorDec=ModulesConversor.esNegativo(b);
+        if(valorDec){
             for(j=i;j<b.length();j++){
                 bin=bin+b.charAt(j);
             }
-            decimal=ModulesConversor.BinarioDecimal(bin);
+            decimal=ModulesConversor.BinarioADecimal(bin);
         }else{
             i=1;
             for(j=i;j<b.length();j++){
                 bin=bin+b.charAt(j);   
             }
-            decimal=ModulesConversor.BinarioDecimal(bin);
+            decimal=ModulesConversor.BinarioADecimal(bin);
             decimal=decimal*-1;  
         }
         return decimal;
     }
     //6:Modulo Binario a Decimal
-    public static int BinarioDecimal(String b){
+    public static int BinarioADecimal(String b){
         int i,pos,decimal,j;
         decimal=0;
         pos=b.length();
@@ -126,25 +126,25 @@ public class ModulesConversor {
         return decimal;
     }
     //7:Modulo Decimal a Binario
-    public static String DecimalBinario(int num){
+    public static String decimalAbinario(int nroDec){
         String binario;
         char signo;
         binario="";
-        if(num>0){
+        if(nroDec>0){
             signo='0';
         }else{
             signo='1';
-            num=num*-1;
+            nroDec=nroDec*-1;
         }
-        while (num>0){
-            if(num%2!=0){
+        while (nroDec>0){
+            if(nroDec%2!=0){
                 binario ='1'+binario ;
                       }else{
-                if(num%2==0){
+                if(nroDec%2==0){
                     binario ='0'+ binario;
                 }
             }
-            num=num/2;
+            nroDec=nroDec/2;
         }
         binario=signo+binario;
         return binario;
@@ -173,7 +173,7 @@ public class ModulesConversor {
             b=obj.next();
             valor=ModulesConversor.esBinario(b);
             }while(valor==true);
-            Decimal=ModulesConversor.BinarioDecimal(b);
+            Decimal=ModulesConversor.BinarioADecimal(b);
             acum=acum+Decimal;
             cont++;
             if(Decimal==0){

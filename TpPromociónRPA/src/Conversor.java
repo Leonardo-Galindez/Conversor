@@ -5,8 +5,8 @@ public class Conversor {
         int num,NumDecimal,posicion1,posicion2,expo;
         float PromedioDecimal;
         String Subcadena,Numbinario,elect1,binario,c1,c2,BinExpo;
-        boolean valor,valorBinario;
-        valor=false;
+        boolean valorMain,valorBinario;
+        valorMain=false;
         Scanner obj=new Scanner(System.in);
         //menú de navegación
         do {
@@ -28,24 +28,30 @@ public class Conversor {
                 case "1":
                     System.out.println("Ingrese numero Decimal"); 
                     num=obj.nextInt();
-                    Numbinario=ModulesConversor.DecimalBinario(num);
+                    Numbinario=ModulesConversor.decimalAbinario(num);
                     System.out.println("Binario:"+Numbinario);
                 break;
                 case "2": 
                     do{
                         System.out.println("Ingrese Numero Binario");
                         binario=obj.next();
-                        valor=ModulesConversor.esBinario(binario);
-                    }while(valor==true);
+                        valorMain=ModulesConversor.esBinario(binario);
+                        if(valorMain==true){
+                            System.out.println("ERROR");
+                        }
+                    }while(valorMain==true);
                     NumDecimal=ModulesConversor.SignoMagDecimal(binario);
                     System.out.println("Decimal:"+NumDecimal);
                 break;
                 case "3": 
                     do{
-                    System.out.println("Ingrese Numero Binario");
-                    binario=obj.next();
-                    valor=ModulesConversor.esBinario(binario);
-                    }while(valor==true);
+                        System.out.println("Ingrese Numero Binario");
+                        binario=obj.next();
+                        valorMain=ModulesConversor.esBinario(binario);
+                        if(valorMain==true){
+                            System.out.println("ERROR");
+                        }
+                    }while(valorMain==true);
                     System.out.println("Ingrese 1ra posicion");
                     posicion1=obj.nextInt();
                     System.out.println("Ingrese 2da posicion");
@@ -61,18 +67,24 @@ public class Conversor {
                     do{
                         System.out.println("Ingrese Numero Binario");
                         binario=obj.next();
-                        valor=ModulesConversor.esBinario(binario);
-                    }while(valor==true);
-                    c1=ModulesConversor.C1Binario(binario);
+                        valorMain=ModulesConversor.esBinario(binario);
+                        if(valorMain==true){
+                            System.out.println("ERROR");
+                        }
+                    }while(valorMain==true);
+                    c1=ModulesConversor.enComplementoA1(binario);
                     System.out.println("Complemento a 1:"+c1);
                 break;
                 case "6":
                     do{
                         System.out.println("Ingrese Numero Binario");
                         binario=obj.next();
-                        valor=ModulesConversor.esBinario(binario);
-                    }while(valor==true);
-                    c2=ModulesConversor.C2Binario(binario);
+                        valorMain=ModulesConversor.esBinario(binario);
+                        if(valorMain==true){
+                            System.out.println("ERROR");
+                        }
+                    }while(valorMain==true);
+                    c2=ModulesConversor.enComplementoA2(binario);
                     System.out.println("Complemento a 2:"+c2);
                 break;
                 case "7": 
@@ -89,8 +101,11 @@ public class Conversor {
                     do{
                         System.out.println("Ingrese Numero Binario");
                         binario=obj.next();
-                        valor=ModulesConversor.esBinario(binario);
-                    }while(valor==true);
+                        valorMain=ModulesConversor.esBinario(binario);
+                        if(valorMain==true){
+                            System.out.println("ERROR");
+                        }
+                    }while(valorMain==true);
                     System.out.println("Ingrese exponenete");
                     expo=obj.nextInt();
                     BinExpo=ModulesConversor.base2PorBinario(binario,expo);
@@ -100,24 +115,27 @@ public class Conversor {
                     do{
                         System.out.println("Ingrese Numero Binario");
                         binario=obj.next();
-                        valor=ModulesConversor.esBinario(binario);
-                    }while(valor==true);
-                    valor=ModulesConversor.BinarioNegativo(binario);
-                    if(valor){
+                        valorMain=ModulesConversor.esBinario(binario);
+                        if(valorMain==true){
+                            System.out.println("ERROR");
+                        }
+                    }while(valorMain==true);
+                    valorMain=ModulesConversor.esNegativo(binario);
+                    if(valorMain){
                         System.out.println(binario+" :Representa un numero positivo");
                     }else{
                         System.out.println(binario+" :Representa un numero negativo");
                     }
                 break;
                 case "0": 
-                    valor=true;
+                valorMain=true;
                 break;
                 default:
                     System.out.println("ERROR");
                 break;
             } 
             System.out.println(""); 
-        }while(valor==false);
+        }while(valorMain==false);
     }
 }
 
