@@ -86,7 +86,7 @@ public class ModulesConversor {
         binarioC2=binarioC2+binC2;//Concatenamos la cadena despues del primer 1 y la cadena antes del primer 1 inclusive
         return binarioC2;
     }   
-    //7:modulo binario en signo magnitud a decimal
+    //6:modulo binario en signo magnitud a decimal
     public static int SignoMagDecimal(String b){
         String bin;
         int i,j,decimal;
@@ -109,7 +109,7 @@ public class ModulesConversor {
         }
         return decimal;
     }
-    //7:Modulo Binario a Decimal
+    //6:Modulo Binario a Decimal
     public static int BinarioDecimal(String b){
         int i,pos,decimal,j;
         decimal=0;
@@ -125,7 +125,7 @@ public class ModulesConversor {
         }   
         return decimal;
     }
-    //8:Modulo Decimal a Binario
+    //7:Modulo Decimal a Binario
     public static String DecimalBinario(int num){
         String binario;
         char signo;
@@ -149,7 +149,7 @@ public class ModulesConversor {
         binario=signo+binario;
         return binario;
     }
-    //Modulo que retorna el binario ingresado con n ceros a la izquierda
+    //8Modulo que retorna el binario ingresado con n ceros a la izquierda
     public static String base2PorBinario(String b,int n){
         int i;
         for(i=0;i<n;i++){
@@ -158,7 +158,6 @@ public class ModulesConversor {
         return b;
     }
     //9:Modulo acumuldor de binarios
-    //probar acumular numero y no numeros
     public static float IngresoBinario(){
         boolean valor;
         int Decimal,cont;
