@@ -76,7 +76,7 @@ public class ModulesConversor {
         for(i=posMain;i>0;i--){
             binarioC2=binarioC2+b.charAt(i);
         }
-        binarioC2=ModulesConversor.C1Binario(binarioC2);
+        binarioC2=ModulesConversor.C1Binario(binarioC2);//llamamos al modulo c1 para invertir los valores a partir de la posicion del primer uno
         binarioC2=binarioC2+binC2;
         return binarioC2;
     }   

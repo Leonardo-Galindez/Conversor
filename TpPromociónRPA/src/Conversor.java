@@ -8,11 +8,12 @@ public class Conversor {
         boolean valor;
         valor=false;
         Scanner obj=new Scanner(System.in);
-        //menú de navegación4
+        //menú de navegación
         do {
             System.out.println("Seleccione una de las opciones-----------------------'*'");
-            System.out.println("");
+            System.out.println();
             System.out.println("Decimal a binario:-----------------------------------'1'");
+            //agregar modulo de verificar binario
             System.out.println("Binario a Decimal:-----------------------------------'2'");
             System.out.println("Seleccione Subcadena:--------------------------------'3'");
             System.out.println("Promedio numeros Binarios:---------------------------'4'");
@@ -31,7 +32,7 @@ public class Conversor {
                     System.out.println("Binario:"+Numbinario);
                 break;
                 case "2": 
-                    do{
+                    do{//Esta funcion que repite hasta que el binario sea valido
                         System.out.println("Ingrese Numero Binario");
                         binario=obj.next();
                         valor=ModulesConversor.esBinario(binario);
