@@ -32,7 +32,8 @@ public class ModulesConversor {
         String bin;
         bin = "";
         cant = b.length();
-        if (pos1 >= 0 && pos1 < cant && pos2 >= 0 && pos2 < cant) {//Validacion para que las posiciones no sean menores a 0 ni mayores a cantidad de caracteres
+        if (pos1 >= 0 && pos1 < cant && pos2 >= 0 && pos2 < cant && pos1<pos2) {//Validacion para que las posiciones no sean menores a 0 ni mayores a cantidad de caracteres
+            //pos1 siempre tiene que ser menor que pos2
             for (i = pos1; i <= pos2; i++) {
                 bin = bin + b.charAt(i);
             }
