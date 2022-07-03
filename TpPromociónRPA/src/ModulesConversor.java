@@ -2,7 +2,7 @@ import java.util.Scanner;
 public class ModulesConversor {
     //intertar cambiar valores 
     //1:Modulo para verificar si el numero binario ingresado es correcto
-    public static boolean esBinario(String bin){
+    public static boolean verificarBinario(String bin){
         boolean valorBin;
         int i,cadena;
         valorBin=false;
@@ -16,8 +16,8 @@ public class ModulesConversor {
         }
         return valorBin;
     }
-    //2:modulo para verificar si un numero  es negativo
-    public static boolean esNegativo(String b){
+    //2:modulo para verificar si un numero  es postivo o negativo
+    public static boolean verifiacarSigno(String b){
         boolean valorNeg;
         valorNeg=false;
         if(b.charAt(0)=='0'){
@@ -78,7 +78,7 @@ public class ModulesConversor {
         }
         //bincC2 tiene la parte de la cadena ingresada hasta incuisive el primer 1 
         posSub=binC2.length();
-        posMain=posMain-posSub;//le restamos a posMain para ibtener la cantidad de caracteres que tenemos en la cadena despues del primer 1
+        posMain=posMain-posSub;//le restamos a posMain para obtener la cantidad de caracteres que tenemos en la cadena despues del primer 1
         for(i=posMain;i>0;i--){//For para ir concatenando los caracteres de la cadena a partir de la posicion del primer 1
             binarioC2=binarioC2+b.charAt(i);
         }
@@ -93,7 +93,7 @@ public class ModulesConversor {
         boolean valorDec;
         i=0;
         bin="";
-        valorDec=ModulesConversor.esNegativo(b);
+        valorDec=ModulesConversor.verifiacarSigno(b);//llamada al modulo 
         if(valorDec){
             for(j=i;j<b.length();j++){
                 bin=bin+b.charAt(j);
@@ -130,7 +130,7 @@ public class ModulesConversor {
         String binario;
         char signo;
         binario="";
-        if(nroDec>0){
+        if(nroDec>=0){
             signo='0';
         }else{
             signo='1';
@@ -149,7 +149,7 @@ public class ModulesConversor {
         binario=signo+binario;
         return binario;
     }
-    //8Modulo que retorna el binario ingresado con n ceros a la izquierda
+    //8:Modulo que retorna el binario ingresado con n ceros a la izquierda
     public static String base2PorBinario(String b,int n){
         int i;
         for(i=0;i<n;i++){
@@ -171,7 +171,7 @@ public class ModulesConversor {
             do{
             System.out.println("Ingrese Numero Binario");
             b=obj.next();
-            valor=ModulesConversor.esBinario(b);
+            valor=ModulesConversor.verifiacarSigno(b);
             }while(valor==true);
             Decimal=ModulesConversor.BinarioADecimal(b);
             acum=acum+Decimal;
