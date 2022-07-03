@@ -2,14 +2,14 @@ import java.util.Scanner;
 public class ModulesConversor {
     //intertar cambiar valores 
     //1:Modulo para verificar si el numero binario ingresado es correcto
-    public static boolean verificarBinario(String bin){
+    public static boolean verificarBinario(String b){
         boolean valorBin;
         int i,cadena;
         valorBin=false;
         i=0;
-        cadena=bin.length();
+        cadena=b.length();
         while(valorBin==false && i<cadena){
-            if(bin.charAt(i)!='1' && bin.charAt(i)!='0'){
+            if(b.charAt(i)!='1' && b.charAt(i)!='0'){
                 valorBin=true;
             }
             i++;
@@ -18,12 +18,12 @@ public class ModulesConversor {
     }
     //2:modulo para verificar si un numero  es postivo o negativo
     public static boolean verifiacarSigno(String b){
-        boolean valorNeg;
-        valorNeg=false;
+        boolean valorSig;
+        valorSig=false;
         if(b.charAt(0)=='0'){
-            valorNeg=true;
+            valorSig=true;
         }
-        return valorNeg;
+        return valorSig;
     }    
     //3:Modulo sub cadena
     public static String Subcadena(String b, int pos1, int pos2){
@@ -93,19 +93,19 @@ public class ModulesConversor {
         boolean valorDec;
         i=0;
         bin="";
-        valorDec=ModulesConversor.verifiacarSigno(b);//llamada al modulo 
-        if(valorDec){
+        valorDec=ModulesConversor.verifiacarSigno(b);//llamada al modulo verifiacarSigno para saber el signo del numero que representa el binario
+        if(valorDec){//si valorDec es true osea negativo
             for(j=i;j<b.length();j++){
                 bin=bin+b.charAt(j);
             }
             decimal=ModulesConversor.BinarioADecimal(bin);
-        }else{
-            i=1;
+        }else{//si valorDec es false osea positivo
+            i=1;//a i lo inicializamos en 1 porque en l aposicion 0 esta el caracter 0
             for(j=i;j<b.length();j++){
                 bin=bin+b.charAt(j);   
             }
-            decimal=ModulesConversor.BinarioADecimal(bin);
-            decimal=decimal*-1;  
+            decimal=ModulesConversor.BinarioADecimal(bin);//el modulo BinarioADecimal nos retorna un numero positivo
+            decimal=decimal*-1; //pero como el binario ingresado representaba un numero negativo lo multiplicamos por -1
         }
         return decimal;
     }
@@ -115,7 +115,7 @@ public class ModulesConversor {
         decimal=0;
         pos=b.length();
         j=0;
-        for(i=pos-1;i>=0;i--){
+        for(i=pos-1;i>=0;i--){//Para la conversion utilizamos un recorrido total de derecha a izquierda
             if(b.charAt(i)=='1'){
                 decimal=decimal+1*(int) Math.pow(2, j);
             }else{
