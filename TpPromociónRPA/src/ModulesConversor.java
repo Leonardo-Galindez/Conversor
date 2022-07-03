@@ -53,9 +53,7 @@ public class ModulesConversor {
             if (b.charAt(i) == '1') {
                 binarioA1 = binarioA1 + '0';
             } else {
-               
-                binarioA1 = binarioA1 + '1';
-                
+                binarioA1 = binarioA1 + '1';  
             }
         }
         return binarioA1;
@@ -71,8 +69,8 @@ public class ModulesConversor {
         valor = false;
         posMain = b.length();
         i = posMain - 1;
-        while (valor == false && i >= 0) {// verifica de derecha a izquierda por recorrido parcial hasta encontrar el
-                                          // primer 1
+        while (valor == false && i >= 0) {// verifica de derecha a izquierda por recorrido parcial hasta encontrar el primer 1
+                                          
             if (b.charAt(i) == '1') {
                 valor = true;
                 binC2 = b.charAt(i) + binC2;
@@ -81,7 +79,7 @@ public class ModulesConversor {
             }
             i--;
         }
-        // bincC2 tiene la parte de la cadena ingresada hasta incuisive el primer 1
+        // bincC2 tiene la parte de la cadena ingresada hasta inclusive el primer 1
         posSub = binC2.length();
         posMain = posMain - posSub;// le restamos a posMain para obtener la cantidad de caracteres que tenemos en
                                    // la cadena despues del primer 1
