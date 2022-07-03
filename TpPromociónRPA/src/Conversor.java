@@ -150,6 +150,9 @@ public class Conversor {
             System.out.println("");
         } while (valorMain == false);
     }
+    
+
+    // 1:Modulo para verificar si el numero binario ingresado es correcto
     public static boolean verificarBinario(String b) {
         boolean valorBin;
         int i, cadena;
