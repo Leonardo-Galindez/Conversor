@@ -72,8 +72,7 @@ public class Conversor {
                     break;
                 case "4":
                     PromedioDecimal = ModulesConversor.IngresoBinario();
-                    System.out
-                            .println("El promedio de numeros binarios ingresados en decimal es de:" + PromedioDecimal);
+                    System.out.println("El promedio de numeros binarios ingresados en decimal es de:" + PromedioDecimal);
                     break;
                 case "5":
                     do {

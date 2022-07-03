@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
 public class ModulesConversor {
-    // intertar cambiar valores
     // 1:Modulo para verificar si el numero binario ingresado es correcto
     public static boolean verificarBinario(String b) {
         boolean valorBin;
@@ -17,7 +16,6 @@ public class ModulesConversor {
         }
         return valorBin;
     }
-
     // 2:modulo para verificar si un numero es postivo o negativo
     public static boolean verifiacarSigno(String b) {
         boolean valorSig;
@@ -34,7 +32,7 @@ public class ModulesConversor {
         String bin;
         bin = "";
         cant = b.length();
-        if (pos1 >= 0 && pos1 < cant && pos2 >= 0 && pos2 < cant) {
+        if (pos1 >= 0 && pos1 < cant && pos2 >= 0 && pos2 < cant) {//Validacion para que las posiciones no sean menores a 0 ni mayores a cantidad de caracteres
             for (i = pos1; i <= pos2; i++) {
                 bin = bin + b.charAt(i);
             }
@@ -110,7 +108,7 @@ public class ModulesConversor {
             for (j = i; j < b.length(); j++) {
                 bin = bin + b.charAt(j);
             }
-            decimal = ModulesConversor.BinarioADecimal(bin);
+            decimal = ModulesConversor.BinarioADecimal(bin);//el modulo BinarioADecimal nos retorna un numero positivo
         } else {// si valorDec es false osea positivo
             i = 1;// a i lo inicializamos en 1 porque en l aposicion 0 esta el caracter 0
             for (j = i; j < b.length(); j++) {
@@ -129,7 +127,7 @@ public class ModulesConversor {
         decimal = 0;
         pos = b.length();
         j = 0;
-        for (i = pos - 1; i >= 0; i--) {// Para la conversion utilizamos un recorrido total de derecha a izquierda
+        for (i = pos - 1; i >= 0; i--) {// Para la conversion de binario a utilizamos un recorrido total de derecha a izquierda
             if (b.charAt(i) == '1') {
                 decimal = decimal + 1 * (int) Math.pow(2, j);
             } else {
@@ -188,9 +186,9 @@ public class ModulesConversor {
             do {
                 System.out.println("Ingrese Numero Binario");
                 b = obj.next();
-                valor = ModulesConversor.verifiacarSigno(b);
+                valor = ModulesConversor.verificarBinario(b);
             } while (valor == true);
-            Decimal = ModulesConversor.BinarioADecimal(b);
+            Decimal = ModulesConversor.SignoMagDecimal(b);
             acum = acum + Decimal;
             cont++;
             if (Decimal == 0) {
