@@ -242,23 +242,23 @@ public class Conversor {
         return binarioC2;
     }
 
-    // 6:modulo binario en signo magnitud a decimal
+    // 6.1:modulo binario en signo magnitud a decimal
     public static int SignoMagDecimal(String b) {
         String bin;
-        int i, j, decimal;
+        int i, j, decimal,cant;
         boolean valorDec;
         i = 0;
         bin = "";
         valorDec = verifiacarSigno(b);// llamada al modulo verifiacarSigno para saber el signo del
-                                                       // numero que representa el binario
+        cant= b.length();                                              // numero que representa el binario
         if (valorDec) {// si valorDec es true osea negativo
-            for (j = i; j < b.length(); j++) {
+            for (j = i; j < cant; j++) {
                 bin = bin + b.charAt(j);
             }
             decimal = BinarioADecimal(bin);//el modulo BinarioADecimal nos retorna un numero positivo
         } else {// si valorDec es false osea positivo
             i = 1;// a i lo inicializamos en 1 porque en l aposicion 0 esta el caracter 0
-            for (j = i; j < b.length(); j++) {
+            for (j = i; j < cant; j++) {
                 bin = bin + b.charAt(j);
             }
             decimal = BinarioADecimal(bin);// el modulo BinarioADecimal nos retorna un numero positivo
@@ -268,7 +268,7 @@ public class Conversor {
         return decimal;
     }
 
-    // 6:Modulo Binario a Decimal
+    // 6.2:Modulo calculo Binario a Decimal
     public static int BinarioADecimal(String b) {
         int i, pos, decimal, j;
         decimal = 0;
