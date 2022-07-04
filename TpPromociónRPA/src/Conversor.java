@@ -5,7 +5,7 @@ public class Conversor {
     public static void main(String[] args) {
         int num, numDecimal, posicion1, posicion2, expo;
         float promedioDecimal;
-        String subcadena, numBinario, elect, binario, c1, c2, binExpo;
+        String subCadena, numBinario, elect, binario, c1, c2, binExpo;
         boolean valorMain, valorBinario;
         // valorBinario es la variable booleana donde se guarda el valor que retorna el
         // modulo esBinario
@@ -33,8 +33,8 @@ public class Conversor {
                 case "1":
                     System.out.println("Ingrese numero Decimal");
                     num = obj.nextInt();
-                    Numbinario = decimalAbinario(num);
-                    System.out.println("Binario:" + Numbinario);
+                    numBinario = decimalAbinario(num);
+                    System.out.println("Binario:" + numBinario);
                     break;
                 case "2":
                     // Esta verificacion la utilizamos en casi todos los casos donde se ingresa un binario
@@ -47,8 +47,8 @@ public class Conversor {
                         }
                     } while (valorBinario == true);// repite mientras sea verdadero que el binario es invalido
                     // valorBinario es donde se asigna el valor booleano que retorna el modulo esBinario
-                    NumDecimal = SignoMagDecimal(binario);
-                    System.out.println("Decimal:" + NumDecimal);
+                    numDecimal = SignoMagDecimal(binario);
+                    System.out.println("Decimal:" + numDecimal);
                     break;
                 case "3":
                     do {
@@ -63,13 +63,13 @@ public class Conversor {
                     posicion1 = obj.nextInt();
                     System.out.println("Ingrese 2da posicion");
                     posicion2 = obj.nextInt();
-                    Subcadena = Subcadena(binario, posicion1, posicion2);
+                    subCadena = Subcadena(binario, posicion1, posicion2);
                     System.out.println("Binario de la posicion:" + posicion1 + " hasta la posicion:" + posicion2
-                            + " es:" + Subcadena);
+                            + " es:" + subCadena);
                     break;
                 case "4":
-                    PromedioDecimal = IngresoBinario();
-                    System.out.println("El promedio de numeros binarios ingresados en decimal es de:" + PromedioDecimal);
+                    promedioDecimal = IngresoBinario();
+                    System.out.println("El promedio de numeros binarios ingresados en decimal es de:" + promedioDecimal);
                     break;
                 case "5":
                     do {
@@ -117,8 +117,8 @@ public class Conversor {
                     } while (valorBinario == true);
                     System.out.println("Ingrese exponenete");
                     expo = obj.nextInt();// expo es la variable entera el cual es 2 elevado ese exponente ingresado
-                    BinExpo = base2PorBinario(binario, expo);
-                    System.out.println("El binario:" + BinExpo);
+                    binExpo = base2PorBinario(binario, expo);
+                    System.out.println("El binario:" + binExpo);
                     break;
                 case "9":
                     do {
