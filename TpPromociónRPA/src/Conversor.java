@@ -37,10 +37,8 @@ public class Conversor {
                     System.out.println("Binario:" + Numbinario);
                     break;
                 case "2":
-                    // Esta verificaion la utilizamos en casi todos los casos donde se ingresa un
-                    // binario
-                    do {// Verificacion de que si el binario es valido, sino este se va a repetir hasta
-                        // que lo sea
+                    // Esta verificacion la utilizamos en casi todos los casos donde se ingresa un binario
+                    do {// Verificacion de que si el binario es valido, sino este se va a repetir hasta que lo sea
                         System.out.println("Ingrese Numero Binario");
                         binario = obj.next();
                         valorBinario = verificarBinario(binario);
@@ -48,8 +46,7 @@ public class Conversor {
                             System.out.println("ERROR");
                         }
                     } while (valorBinario == true);// repite mientras sea verdadero que el binario es invalido
-                    // valorBinario es donde se asigna el valor booleano que retorna el modulo
-                    // esBinario
+                    // valorBinario es donde se asigna el valor booleano que retorna el modulo esBinario
                     NumDecimal = SignoMagDecimal(binario);
                     System.out.println("Decimal:" + NumDecimal);
                     break;
@@ -99,7 +96,7 @@ public class Conversor {
                     System.out.println("Complemento a 2:" + c2);
                     break;
                 case "7": // Este caso lo hicimos diferente al resto en la validacion del binario para que
-                          // no repita si es invalido sino que muestre el mensaje por pantallal
+                          // no repita si es invalido sino que muestre el mensaje por pantalla
                     System.out.println("Ingrese Numero Binario");
                     binario = obj.next();
                     valorBinario = verificarBinario(binario);
