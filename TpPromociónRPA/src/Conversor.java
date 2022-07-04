@@ -3,9 +3,9 @@ import java.util.Scanner;
 //Algoritmo para calculos, conversiones y verificaciones de numeros decimales y binario
 public class Conversor {
     public static void main(String[] args) {
-        int num, NumDecimal, posicion1, posicion2, expo;
-        float PromedioDecimal;
-        String Subcadena, Numbinario, elect, binario, c1, c2, BinExpo;
+        int num, numDecimal, posicion1, posicion2, expo;
+        float promedioDecimal;
+        String subcadena, numBinario, elect, binario, c1, c2, binExpo;
         boolean valorMain, valorBinario;
         // valorBinario es la variable booleana donde se guarda el valor que retorna el
         // modulo esBinario
