@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-//Algoritmo para calculos, conversiones y verificaciones de números decimales y binarios
+//Algoritmo para calculos, conversiones y verificaciones de numeros decimales y binario
 public class Conversor {
     public static void main(String[] args) {
         int num, numDecimal, posicion1, posicion2, expo;
@@ -8,8 +8,8 @@ public class Conversor {
         String subCadena, numBinario, elect, binario, c1, c2, binExpo;
         boolean valorMain, valorBinario;
         // valorBinario es la variable booleana donde se guarda el valor que retorna el
-        // módulo esBinario
-        // valorMain es la variable que se utiliza para la operación booleana del
+        // modulo esBinario
+        // valorMain es la variable que se utiliza para la operacion booleana del
         // repetir hasta principal
         valorMain = false;
         Scanner obj = new Scanner(System.in);
@@ -17,64 +17,52 @@ public class Conversor {
         do {
             System.out.println("Seleccione una de las opciones-----------------------'*'");
             System.out.println();
-            System.out.println("Decimal a Binario:-----------------------------------'1'");
+            System.out.println("Decimal a binario:-----------------------------------'1'");
             System.out.println("Binario a Decimal:-----------------------------------'2'");
-            System.out.println("Seleccione Subcadena del Binario:--------------------'3'");
-            System.out.println("Promedio números Binarios:---------------------------'4'");
+            System.out.println("Seleccione Subcadena del binario:--------------------'3'");
+            System.out.println("Promedio numeros Binarios:---------------------------'4'");
             System.out.println("Binario a Complemento a 1:---------------------------'5'");
             System.out.println("Binario a Complemento a 2:---------------------------'6'");
-            System.out.println("Verificar si un Binario es válido--------------------'7'");
-            System.out.println("Multiplicar por 2 a la n por un Binario--------------'8'");
-            System.out.println("El Binario representa un número positivo o negativo--'9'");
+            System.out.println("Verificar si un binario es valido--------------------'7'");
+            System.out.println("Multiplicar por 2 a la n por un binario--------------'8'");
+            System.out.println("El binario representa un numero positivo o negativo--'9'");
             System.out.println();
             System.out.println("Terminar---------------------------------------------'0'");
             elect = obj.next();
             switch (elect) {
                 case "1":
-                    System.out.println("Ingrese número Decimal");
+                    System.out.println("Ingrese numero Decimal");
                     num = obj.nextInt();
                     numBinario = decimalAbinario(num);
-<<<<<<< Updated upstream
                     System.out.println("Binario:" + numBinario);
-=======
-                    System.out.println("Binario: " + numBinario);
->>>>>>> Stashed changes
                     break;
                 case "2":
-                    // Esta verificación la utilizamos en casi todos los casos donde se ingresa un binario
-                    do {// Verificación de que el binario es válido, sino este se va a repetir hasta que lo sea
-                        System.out.println("Ingrese un número Binario");
+                    // Esta verificacion la utilizamos en casi todos los casos donde se ingresa un binario
+                    do {// Verificacion de que si el binario es valido, sino este se va a repetir hasta que lo sea
+                        System.out.println("Ingrese Numero Binario");
                         binario = obj.next();
                         valorBinario = verificarBinario(binario);
                         if (valorBinario == true) {// si es verdadero que no es un binario se muestra ERROR
                             System.out.println("ERROR");
                         }
-<<<<<<< Updated upstream
                     } while (valorBinario == true);// repite mientras sea verdadero que el binario es invalido
                     // valorBinario es donde se asigna el valor booleano que retorna el modulo esBinario
                     numDecimal = SignoMagDecimal(binario);
                     System.out.println("Decimal:" + numDecimal);
-=======
-                    } while (valorBinario == true);// repite mientras sea verdadero que el binario es inválido
-                    // valorBinario es donde se asigna el valor booleano que retorna el módulo esBinario
-                    numDecimal = SignoMagDecimal(binario);
-                    System.out.println("Decimal: " + numDecimal);
->>>>>>> Stashed changes
                     break;
                 case "3":
                     do {
-                        System.out.println("Ingrese un número Binario");
+                        System.out.println("Ingrese Numero Binario");
                         binario = obj.next();
                         valorBinario = verificarBinario(binario);
                         if (valorBinario == true) {
                             System.out.println("ERROR");
                         }
                     } while (valorBinario == true);
-                    System.out.println("Ingrese 1ra posición:");
+                    System.out.println("Ingrese 1ra posicion");
                     posicion1 = obj.nextInt();
-                    System.out.println("Ingrese 2da posición:");
+                    System.out.println("Ingrese 2da posicion");
                     posicion2 = obj.nextInt();
-<<<<<<< Updated upstream
                     subCadena = Subcadena(binario, posicion1, posicion2);
                     System.out.println("Binario de la posicion:" + posicion1 + " hasta la posicion:" + posicion2
                             + " es:" + subCadena);
@@ -82,19 +70,10 @@ public class Conversor {
                 case "4":
                     promedioDecimal = IngresoBinario();
                     System.out.println("El promedio de numeros binarios ingresados en decimal es de:" + promedioDecimal);
-=======
-                    subcadena = Subcadena(binario, posicion1, posicion2);
-                    System.out.println("Binario de la posición:" + posicion1 + " hasta la posición:" + posicion2
-                            + " es: " + subcadena);
-                    break;
-                case "4":
-                    promedioDecimal = IngresoBinario();
-                    System.out.println("El promedio de números binarios ingresados en decimal es de: " + promedioDecimal);
->>>>>>> Stashed changes
                     break;
                 case "5":
                     do {
-                        System.out.println("Ingrese un número Binario");
+                        System.out.println("Ingrese Numero Binario");
                         binario = obj.next();
                         valorBinario = verificarBinario(binario);
                         if (valorBinario == true) {
@@ -102,11 +81,11 @@ public class Conversor {
                         }
                     } while (valorBinario == true);
                     c1 = enComplementoA1(binario);
-                    System.out.println("Complemento a 1: " + c1);
+                    System.out.println("Complemento a 1:" + c1);
                     break;
                 case "6":
                     do {
-                        System.out.println("Ingrese un número Binario");
+                        System.out.println("Ingrese Numero Binario");
                         binario = obj.next();
                         valorBinario = verificarBinario(binario);
                         if (valorBinario == true) {
@@ -114,61 +93,54 @@ public class Conversor {
                         }
                     } while (valorBinario == true);
                     c2 = enComplementoA2(binario);
-                    System.out.println("Complemento a 2: " + c2);
+                    System.out.println("Complemento a 2:" + c2);
                     break;
-                case "7": // Este caso lo hicimos diferente al resto en la validación del binario para que
-                          // no repita si es inválido sino que muestre el mensaje por pantalla
-                    System.out.println("Ingrese un número Binario");
+                case "7": // Este caso lo hicimos diferente al resto en la validacion del binario para que
+                          // no repita si es invalido sino que muestre el mensaje por pantalla
+                    System.out.println("Ingrese Numero Binario");
                     binario = obj.next();
                     valorBinario = verificarBinario(binario);
                     if (valorBinario == false) {
-                        System.out.println("El Binario es válido");
+                        System.out.println("El binario es valido");
                     } else {
-                        System.out.println("El Binario es inválido");
+                        System.out.println("El binario es invalido");
                     }
                     break;
                 case "8":
                     do {
-                        System.out.println("Ingrese un número Binario");
+                        System.out.println("Ingrese Numero Binario");
                         binario = obj.next();
                         valorBinario = verificarBinario(binario);
                         if (valorBinario == true) {
                             System.out.println("ERROR");
                         }
                     } while (valorBinario == true);
-<<<<<<< Updated upstream
                     System.out.println("Ingrese exponenete");
                     expo = obj.nextInt();// expo es la variable entera el cual es 2 elevado ese exponente ingresado
                     binExpo = base2PorBinario(binario, expo);
                     System.out.println("El binario:" + binExpo);
-=======
-                    System.out.println("Ingrese exponenete:");
-                    expo = obj.nextInt();// expo es la variable entera tal que 2 sea elevado a ese exponente ingresado
-                    binExpo = base2PorBinario(binario, expo);
-                    System.out.println("El binario resultante es: " + binExpo);
->>>>>>> Stashed changes
                     break;
                 case "9":
                     do {
-                        System.out.println("Ingrese un número Binario");
+                        System.out.println("Ingrese Numero Binario");
                         binario = obj.next();
                         valorBinario = verificarBinario(binario);
                         if (valorBinario == true) {
                             System.out.println("ERROR");
                         }
                     } while (valorBinario == true);
-                    valorBinario = verificarSigno(binario);
+                    valorBinario = verifiacarSigno(binario);
                     if (valorBinario) {
-                        System.out.println(binario + ": Representa un número positivo");
+                        System.out.println(binario + " :Representa un numero positivo");
                     } else {
-                        System.out.println(binario + ": Representa un número negativo");
+                        System.out.println(binario + " :Representa un numero negativo");
                     }
                     break;
                 case "0":
-                    valorMain = true;// valor main se le asigna true para parar la ejecución
+                    valorMain = true;// valor main se le asigna true para parar la ejecucicion
                     break;
                 default:
-                    System.out.println("ERROR");// Si se ingresa un valor no válido para el switch en la variable
+                    System.out.println("ERROR");// Si se ingresa en un valor no valido para el switch en la variable
                                                 // elect se muestra ERROR
                     break;
             }
@@ -177,7 +149,7 @@ public class Conversor {
     }
     
 
-    // 1: Módulo para verificar si el número binario ingresado es correcto
+    // 1:Modulo para verificar si el numero binario ingresado es correcto
     public static boolean verificarBinario(String b) {
         boolean valorBin;
         int i, cadena;
@@ -192,8 +164,8 @@ public class Conversor {
         }
         return valorBin;
     }
-    // 2: Módulo para verificar si un número es positivo o negativo
-    public static boolean verificarSigno(String b) {
+    // 2:modulo para verificar si un numero es postivo o negativo
+    public static boolean verifiacarSigno(String b) {
         boolean valorSig;
         valorSig = false;
         if (b.charAt(0) == '0') {
@@ -208,7 +180,7 @@ public class Conversor {
         String bin;
         bin = "";
         cant = b.length();
-        if (pos1 >= 0 && pos1 < cant && pos2 >= 0 && pos2 < cant && pos1<=pos2) { //Validación para que las posiciones no sean menores a 0 ni mayores a la cantidad de caracteres
+        if (pos1 >= 0 && pos1 < cant && pos2 >= 0 && pos2 < cant && pos1<=pos2) {//Validacion para que las posiciones no sean menores a 0 ni mayores a cantidad de caracteres
             //pos1 siempre tiene que ser menor que pos2
             for (i = pos1; i <= pos2; i++) {
                 bin = bin + b.charAt(i);
@@ -219,23 +191,23 @@ public class Conversor {
         return bin;
     }
 
-    // 4: Módulo para sacar el Complemento a 1 de un binario
+    // 4: Modulo para sacar el Complemento a 1 de un binario
     public static String enComplementoA1(String b) {
         int i, pos;
-        String binarioC1;
+        String binarioA1;
         binarioA1 = "";
         pos = b.length();
         for (i = 0; i < pos; i++) {
             if (b.charAt(i) == '1') {
-                binarioC1 = binarioC1 + '0';
+                binarioA1 = binarioA1 + '0';
             } else {
-                binarioC1 = binarioC1 + '1';
+                binarioA1 = binarioA1 + '1';  
             }
         }
-        return binarioC1;
+        return binarioA1;
     }
 
-    // 5: Módulo para sacar el Complemento a 2 de un binario
+    // 5: Modulo para sacar el Complemento a 2 de un binario
     public static String enComplementoA2(String b) {
         int posMain, posSub, i;
         String binC2, binarioC2;
@@ -255,7 +227,7 @@ public class Conversor {
             }
             i--;
         }
-        // binC2 tiene la parte de la cadena ingresada hasta inclusive el primer 1
+        // bincC2 tiene la parte de la cadena ingresada hasta inclusive el primer 1
         posSub = binC2.length();
         posMain = posMain - posSub;// le restamos a posMain para obtener la cantidad de caracteres que tenemos en
                                    // la cadena despues del primer 1
@@ -270,39 +242,39 @@ public class Conversor {
         return binarioC2;
     }
 
-    // 6.1: Módulo binario en signo magnitud a decimal
+    // 6.1:modulo binario en signo magnitud a decimal
     public static int SignoMagDecimal(String b) {
         String bin;
-        int i, j, decimal, cant;
+        int i, j, decimal,cant;
         boolean valorDec;
         i = 0;
         bin = "";
-        valorDec = verificarSigno(b);// llamada al módulo verificarSigno para saber el signo del
-        cant = b.length();                                              // número que representa el binario
-        if (valorDec) {// si valorDec es true, es decir, negativo
+        valorDec = verifiacarSigno(b);// llamada al modulo verifiacarSigno para saber el signo del
+        cant= b.length();                                              // numero que representa el binario
+        if (valorDec) {// si valorDec es true osea negativo
             for (j = i; j < cant; j++) {
                 bin = bin + b.charAt(j);
             }
-            decimal = binarioAdecimal(bin);//el módulo binarioAdecimal nos retorna un número positivo
-        } else {// si valorDec es false, es decir, positivo
-            i = 1;// a i lo inicializamos en 1 porque en la posición 0 esta el caracter 0
+            decimal = BinarioADecimal(bin);//el modulo BinarioADecimal nos retorna un numero positivo
+        } else {// si valorDec es false osea positivo
+            i = 1;// a i lo inicializamos en 1 porque en l aposicion 0 esta el caracter 0
             for (j = i; j < cant; j++) {
                 bin = bin + b.charAt(j);
             }
-            decimal = binarioAdecimal(bin);// el módulo binarioAdecimal nos retorna un número positivo
-            decimal = decimal * -1; // pero como el binario ingresado representaba un número negativo lo
+            decimal = BinarioADecimal(bin);// el modulo BinarioADecimal nos retorna un numero positivo
+            decimal = decimal * -1; // pero como el binario ingresado representaba un numero negativo lo
                                     // multiplicamos por -1
         }
         return decimal;
     }
 
-    // 6.2: Módulo calculo Binario a Decimal
-    public static int binarioAdecimal(String b) {
+    // 6.2:Modulo calculo Binario a Decimal
+    public static int BinarioADecimal(String b) {
         int i, pos, decimal, j;
         decimal = 0;
         pos = b.length();
         j = 0;
-        for (i = pos - 1; i >= 0; i--) {// Para la conversión de binario a decimal utilizamos un recorrido total de derecha a izquierda
+        for (i = pos - 1; i >= 0; i--) {// Para la conversion de binario a utilizamos un recorrido total de derecha a izquierda
             if (b.charAt(i) == '1') {
                 decimal = decimal + 1 * (int) Math.pow(2, j);
             } else {
@@ -313,7 +285,7 @@ public class Conversor {
         return decimal;
     }
 
-    // 7: Módulo Decimal a Binario
+    // 7:Modulo Decimal a Binario
     public static String decimalAbinario(int nroDec) {
         String binario;
         char signo;
@@ -338,7 +310,7 @@ public class Conversor {
         return binario;
     }
 
-    // 8: Módulo que retorna el binario ingresado con n ceros a la izquierda
+    // 8:Modulo que retorna el binario ingresado con n ceros a la izquierda
     public static String base2PorBinario(String b, int n) {
         int i;
         for (i = 0; i < n; i++) {
@@ -347,10 +319,10 @@ public class Conversor {
         return b;
     }
 
-    // 9: Módulo acumulador de binarios
+    // 9:Modulo acumuldor de binarios
     public static float IngresoBinario() {
         boolean valor;
-        int decimal, cont;
+        int Decimal, cont;
         float promedio, acum;
         cont = 0;
         acum = 0;
@@ -359,14 +331,14 @@ public class Conversor {
         Scanner obj = new Scanner(System.in);
         while (valor == false) {
             do {
-                System.out.println("Ingrese un número Binario");
+                System.out.println("Ingrese Numero Binario");
                 b = obj.next();
                 valor = verificarBinario(b);
             } while (valor == true);
-            decimal = SignoMagDecimal(b);
-            acum = acum + decimal;
+            Decimal = SignoMagDecimal(b);
+            acum = acum + Decimal;
             cont++;
-            if (decimal == 0) {
+            if (Decimal == 0) {
                 valor = true;
                 cont--;
             }
