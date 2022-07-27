@@ -164,7 +164,7 @@ public class Conversor {
         }
         return valorBin;
     }
-    // 2:modulo para verificar si un numero es postivo o negativo
+    // 2:modulo para verificar si un numero es positivo o negativo
     public static boolean verifiacarSigno(String b) {
         boolean valorSig;
         valorSig = false;
@@ -173,7 +173,6 @@ public class Conversor {
         }
         return valorSig;
     }
-
     // 3:Modulo sub cadena
     public static String Subcadena(String b, int pos1, int pos2) {
         int i, cant;
