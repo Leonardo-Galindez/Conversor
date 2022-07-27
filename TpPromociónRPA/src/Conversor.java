@@ -7,10 +7,8 @@ public class Conversor {
         float promedioDecimal;
         String subCadena, numBinario, elect, binario, c1, c2, binExpo;
         boolean valorMain, valorBinario;
-        // valorBinario es la variable booleana donde se guarda el valor que retorna el
-        // modulo esBinario
-        // valorMain es la variable que se utiliza para la operacion booleana del
-        // repetir hasta principal
+        // valorBinario es la variable booleana donde se guarda el valor que retorna el modulo verificarBinario
+        // valorMain es la variable que se utiliza para la operacion booleana del repetir hasta principal
         valorMain = false;
         Scanner obj = new Scanner(System.in);
         // menú de navegación
@@ -46,7 +44,7 @@ public class Conversor {
                             System.out.println("ERROR");
                         }
                     } while (valorBinario == true);// repite mientras sea verdadero que el binario es invalido
-                    // valorBinario es donde se asigna el valor booleano que retorna el modulo esBinario
+                    // valorBinario es donde se asigna el valor booleano que retorna el modulo verificarBinario
                     numDecimal = SignoMagDecimal(binario);
                     System.out.println("Decimal:" + numDecimal);
                     break;
@@ -95,8 +93,7 @@ public class Conversor {
                     c2 = enComplementoA2(binario);
                     System.out.println("Complemento a 2:" + c2);
                     break;
-                case "7": // Este caso lo hicimos diferente al resto en la validacion del binario para que
-                          // no repita si es invalido sino que muestre el mensaje por pantalla
+                case "7": // Este caso lo hicimos diferente al resto en la validacion del binario para que no repita si es invalido sino que muestre el mensaje por pantalla
                     System.out.println("Ingrese Numero Binario");
                     binario = obj.next();
                     valorBinario = verificarBinario(binario);
@@ -116,7 +113,7 @@ public class Conversor {
                         }
                     } while (valorBinario == true);
                     System.out.println("Ingrese exponenete");
-                    expo = obj.nextInt();// expo es la variable entera el cual es 2 elevado ese exponente ingresado
+                    expo = obj.nextInt();// expo es la variable entera el cual es 2 elevado ese valor ingresado
                     binExpo = base2PorBinario(binario, expo);
                     System.out.println("El binario:" + binExpo);
                     break;
@@ -137,11 +134,10 @@ public class Conversor {
                     }
                     break;
                 case "0":
-                    valorMain = true;// valor main se le asigna true para parar la ejecucicion
+                    valorMain = true;// valor main se le asigna true para parar la ejecucion
                     break;
                 default:
-                    System.out.println("ERROR");// Si se ingresa en un valor no valido para el switch en la variable
-                                                // elect se muestra ERROR
+                    System.out.println("ERROR");// Si se ingresa en un valor no valido para el switch en la variable elect se muestra ERROR
                     break;
             }
             System.out.println("");
@@ -164,7 +160,7 @@ public class Conversor {
         }
         return valorBin;
     }
-    // 2:modulo para verificar si un numero es positivo o negativo
+    // 2:modulo para verificar si un numero es postivo o negativo
     public static boolean verifiacarSigno(String b) {
         boolean valorSig;
         valorSig = false;
@@ -173,6 +169,7 @@ public class Conversor {
         }
         return valorSig;
     }
+
     // 3:Modulo sub cadena
     public static String Subcadena(String b, int pos1, int pos2) {
         int i, cant;
@@ -215,7 +212,7 @@ public class Conversor {
         boolean valor;
         valor = false;
         posMain = b.length();
-        i = posMain - 1;
+        i = posMain - 1;//para que no tome el primer 1 
         while (valor == false && i >= 0) {// verifica de derecha a izquierda por recorrido parcial hasta encontrar el primer 1
                                           
             if (b.charAt(i) == '1') {
@@ -228,16 +225,12 @@ public class Conversor {
         }
         // bincC2 tiene la parte de la cadena ingresada hasta inclusive el primer 1
         posSub = binC2.length();
-        posMain = posMain - posSub;// le restamos a posMain para obtener la cantidad de caracteres que tenemos en
-                                   // la cadena despues del primer 1
-        for (i = posMain; i > 0; i--) {// For para ir concatenando los caracteres de la cadena a partir de la posicion
-                                       // del primer 1
+        posMain = posMain - posSub;// le restamos a posMain para obtener la cantidad de caracteres que tenemos en la cadena despues del primer 1
+        for (i = posMain; i > 0; i--) {// For para ir concatenando los caracteres de la cadena a partir de la posicion del primer 1
             binarioC2 = binarioC2 + b.charAt(i);
         }
-        binarioC2 = enComplementoA1(binarioC2);// llamamos al modulo c1 para invertir los valores a
-                                                                // partir de la posicion del primer 1
-        binarioC2 = binarioC2 + binC2;// Concatenamos la cadena despues del primer 1 y la cadena antes del primer 1
-                                      // inclusive
+        binarioC2 = enComplementoA1(binarioC2);// llamamos al modulo c1 para invertir los valores a partir de la posicion del primer 1
+        binarioC2 = binarioC2 + binC2;// Concatenamos la cadena despues del primer 1 y la cadena antes del primer 1 inclusive
         return binarioC2;
     }
 
@@ -248,21 +241,20 @@ public class Conversor {
         boolean valorDec;
         i = 0;
         bin = "";
-        valorDec = verifiacarSigno(b);// llamada al modulo verifiacarSigno para saber el signo del
-        cant= b.length();                                              // numero que representa el binario
-        if (valorDec) {// si valorDec es true osea negativo
+        valorDec = verifiacarSigno(b);// llamada al modulo verifiacarSigno para saber el signo del numero que representa el binario
+        cant= b.length();                                             
+        if (valorDec) {// si valorDec es true osea positivo
             for (j = i; j < cant; j++) {
                 bin = bin + b.charAt(j);
             }
             decimal = BinarioADecimal(bin);//el modulo BinarioADecimal nos retorna un numero positivo
-        } else {// si valorDec es false osea positivo
-            i = 1;// a i lo inicializamos en 1 porque en l aposicion 0 esta el caracter 0
+        } else {// si valorDec es false osea negativo
+            i = 1;// a i lo inicializamos en 1 porque en la aposicion 0 esta el caracter 0
             for (j = i; j < cant; j++) {
                 bin = bin + b.charAt(j);
             }
             decimal = BinarioADecimal(bin);// el modulo BinarioADecimal nos retorna un numero positivo
-            decimal = decimal * -1; // pero como el binario ingresado representaba un numero negativo lo
-                                    // multiplicamos por -1
+            decimal = decimal * -1; // pero como el binario ingresado representaba un numero negativo lo multiplicamos por -1
         }
         return decimal;
     }
@@ -289,7 +281,7 @@ public class Conversor {
         String binario;
         char signo;
         binario = "";
-        if (nroDec >= 0) {
+        if (nroDec >= 0) {//validacion de signo
             signo = '0';
         } else {
             signo = '1';
