@@ -212,7 +212,7 @@ public class Conversor {
         boolean valor;
         valor = false;
         posMain = b.length();
-        i = posMain - 1;//para que no tome el primer 1 
+        i = posMain - 1; 
         while (valor == false && i >= 0) {// verifica de derecha a izquierda por recorrido parcial hasta encontrar el primer 1
                                           
             if (b.charAt(i) == '1') {
