@@ -185,7 +185,8 @@ public class Conversor {
         String bin;
         bin = "";
         cant = b.length();
-        if (pos1 >= 0 && pos1 < cant && pos2 >= 0 && pos2 < cant && pos1<=pos2) {//Validacion para que las posiciones no sean menores a 0 ni mayores a cantidad de caracteres
+        if (pos1 >= 0 && pos1 < cant && pos2 >= 0 && pos2 < cant && pos1<=pos2) {
+            //Validacion para que las posiciones no sean menores a 0 ni mayores a cantidad de caracteres
             //pos1 siempre tiene que ser menor que pos2
             for (i = pos1; i <= pos2; i++) {
                 bin = bin + b.charAt(i);
@@ -225,7 +226,8 @@ public class Conversor {
         valor = false;
         posMain = b.length();
         i = posMain - 1; 
-        while (valor == false && i >= 0) {// verifica de derecha a izquierda por recorrido parcial hasta encontrar el primer 1
+        while (valor == false && i >= 0) {
+            // verifica de derecha a izquierda por recorrido parcial hasta encontrar el primer 1
                                           
             if (b.charAt(i) == '1') {
                 valor = true;
@@ -237,7 +239,8 @@ public class Conversor {
         }
         // bincC2 tiene la parte de la cadena ingresada hasta inclusive el primer 1
         posSub = binC2.length();
-        posMain = posMain - posSub;// le restamos a posMain para obtener la cantidad de caracteres que tenemos en la cadena despues del primer 1
+        posMain = posMain - posSub;
+        // le restamos a posMain para obtener la cantidad de caracteres que tenemos en la cadena despues del primer 1
         
 
         binarioC2 = Subcadena(b, 0, posMain-1);
@@ -277,7 +280,7 @@ public class Conversor {
     
     public static int BinarioADecimal(String b) {
         // 6.2:Modulo calculo Binario a Decimal
-        //b cadenad e caracteres ingresada para el usuario
+        //b cadena de caracteres ingresada para el usuario
         int i, pos, decimal, j;
         decimal = 0;
         pos = b.length();
@@ -306,7 +309,8 @@ public class Conversor {
             signo = '1';
             nroDec = nroDec * -1;
         }
-        while (nroDec > 0) {//uso un while porque no conozco la cantidad de veces que voy a dividir por 2 el decimal ingresado
+        while (nroDec > 0) {
+            //uso un while porque no conozco la cantidad de veces que voy a dividir por 2 el decimal ingresado
             if (nroDec % 2 != 0) {
                 binario = '1' + binario;
             } else {
