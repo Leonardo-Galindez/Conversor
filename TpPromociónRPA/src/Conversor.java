@@ -230,11 +230,9 @@ public class Conversor {
             // verifica de derecha a izquierda por recorrido parcial hasta encontrar el primer 1
                                           
             if (b.charAt(i) == '1') {
-                valor = true;
-                binC2 = b.charAt(i) + binC2;
-            } else {
-                binC2 = b.charAt(i) + binC2;
-            }
+                valor = true;  
+            } 
+            binC2 = b.charAt(i) + binC2;
             i--;
         }
         // bincC2 tiene la parte de la cadena ingresada hasta inclusive el primer 1
@@ -242,7 +240,6 @@ public class Conversor {
         posMain = posMain - posSub;
         // le restamos a posMain para obtener la cantidad de caracteres que tenemos en la cadena despues del primer 1
         
-
         binarioC2 = Subcadena(b, 0, posMain-1);
         
         binarioC2 = enComplementoA1(binarioC2);// llamamos al modulo c1 para invertir los valores a partir de la posicion del primer 1
