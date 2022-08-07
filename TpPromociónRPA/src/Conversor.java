@@ -15,7 +15,7 @@ public class Conversor {
         
         valorMain = false;
         Scanner obj = new Scanner(System.in);
-        //hola mundo
+        
         // menú de navegación
         do {
             System.out.println("Seleccione una de las opciones-----------------------'*'");
